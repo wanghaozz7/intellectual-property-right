@@ -1,0 +1,160 @@
+.container{
+    width: 1208px;
+    margin: auto;
+}
+/* 查找范围-上 */
+.search-Range .search-Range-title{
+    display: flex;
+    height: 50px;
+    background-color: #fff;
+    margin-bottom: 2px;
+    padding: 10px 10px 0px 20px;
+}
+.search-Range-title .left{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+}
+.search-Range-title .right{
+    display: flex;
+}
+.search-Range-title .right .right-item{
+    cursor:pointer;/* 变成鼠标手 */
+    width: 50px;
+    height: 30px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+}
+
+/*.search-Range-title .right .active{*/
+/*    background-color: #0089e5;*/
+/*    color: #FFFFFF;*/
+/*}*/
+/* 查找范围-下 */
+.search-Range-down{
+    background-color: #fff;
+    padding: 10px 10px 20px 20px;
+}
+.search-Range-down-item{
+    cursor:pointer;
+    display: flex;
+    height: 35px;
+}
+.search-Range-down-item .left{
+    color: #959595;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+.search-Range-down-item .right{
+    display: flex;
+}
+.search-Range-down-item .right .right-item{
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    color: #8f8f8f;
+    margin-right: 20px;
+}
+.right-item:hover{
+    background-color: #0089e5;
+    color: #fff !important;
+}
+.active{
+    background-color: #0089e5;
+    color: #fff !important;
+}
+
+/* 筛选条件 */
+.search-condition{
+    display: flex;
+}
+.search-Range-down .search-condition .search-condition-left{
+    width: 100px;
+    font-size: 14px;
+}
+.search-condition .search-condition-right{
+    cursor:pointer;
+    font-size: 14px;
+    /*min-width: 90px;*/
+    padding: 0 20px;
+    margin-right: 10px;
+    height: 30px;
+    background-color: #e8f4fd;
+    text-align: center;
+    line-height: 30px;
+    color: #0089e5;
+    border: 1px solid #0089e5;
+}
+
+
+/* 查询结果 */
+.search-result{
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 10px 10px 10px 20px;
+}
+.search-result-number{
+    color: #8d8d8d;
+    font-size: 14px;
+}
+.search-result-number span{
+    color: #ff633d;
+    font-size: 16px;
+    font-weight: bold;
+}
+.search-result-export{
+    margin-top: 20px;
+}
+.search-result-export-item{
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #efefef;
+    margin: 10px 0;
+    /*margin-left: 10px;*/
+}
+.search-result-export-item .left{
+    width: 100px;
+    height: 100px;
+    background-color: #ffb915;
+    text-align: center;
+    font-size: 60px;
+    color: #FFFFFF;
+    line-height: 100px;
+}
+.search-result-export-item .right{
+    margin-left: 10px;
+}
+.search-result-export-item .name_from{
+    /*margin: 10px 0;*/
+    display: flex;
+}
+.search-result-export-item .name_from .from{
+    color: #676767;
+    font-size: 13px;
+    margin-top: 3px;
+    margin-left: 20px;
+}
+.search-result-export-item .right .tag{
+    margin: 5px 0;
+    font-size: 14px;
+    color: #6f6f6f;
+}
+.search-result-export-item .right .data{
+    display: flex;
+}
+.search-result-export-item .right .data .data-item{
+    margin-right: 30px;
+}
+.search-result-export-item .right .data .data-item .title{
+    font-size: 14px;
+    color: #6f6f6f;
+}
+.search-result-export-item .right .data .data-item .value {
+    font-size: 14px;
+    color: #6f6f6f;
+}

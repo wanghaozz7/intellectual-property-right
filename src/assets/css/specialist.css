@@ -1,0 +1,182 @@
+.specialist {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 1226px;
+    height: 510px;
+    /*background: white;*/
+}
+.main>.title{
+    font-weight:normal;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.main>.title h2 {
+    font-size: 28px;
+    color: #4a4a4a;
+}
+.specialist .specialist_m ul li {
+    padding: 15px 0 0 20px;
+    width: 415px;
+    height: 250px;
+    box-sizing: border-box;
+    transition: all .3s;
+    background: #ffffff;
+}
+
+.specialist .specialist_m ul li:first-child {
+    margin-bottom: 20px;
+}
+
+.big-img {
+    width: 377px;
+    float: left;
+    margin: 0 auto 0 0;
+    /*margin-right: 10px;*/
+    position: relative;
+    z-index: 1;
+    /*background: red;*/
+    /*width: 600px;*/
+    height: 510px;
+
+    overflow: hidden;
+}
+
+.big-img a img {
+    height: 100%;
+    transition: all .6s;
+}
+
+.specialist_m{
+    margin: 0 auto 0 0;
+    float: left;
+    width: 415px;
+    /*margin-right: 10px;*/
+    /*background: white;*/
+}
+
+.specialist .specialist_m ul li span.fl {
+    margin-right: 20px;
+    position: relative;
+    transition: all .3s;
+}
+.specialist .specialist_m ul li div.fl {
+    width: 144px;
+    padding-top: 15px;
+}
+
+.specialist .specialist_m a.title {
+    font-size: 18px;
+    line-height: 22px;
+    max-height: 68px;
+    margin-bottom: 16px;
+    color: #000;
+    display: block;
+    overflow: hidden;
+}
+
+.specialist .specialist_m h3 {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.specialist .specialist_m p {
+    line-height: 20px;
+    font-size: 14px;
+    color: #9b9b9b;
+}
+
+.specialist .specialist_m .check_detail {
+    display: block;
+    margin-top: 20px;
+    width: 88px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #595757;
+    border-radius: 5px;
+    text-align: center;
+    color: #595757;
+}
+
+/*specialist_r*/
+.specialist .specialist_r ul li {
+    padding: 15px 0 0 0;
+    width: 415px;
+    height: 250px;
+    box-sizing: border-box;
+    background: #fff;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.specialist .specialist_r ul li:first-child {
+    margin-bottom: 20px;
+}
+
+.specialist .specialist_r ul li .item {
+    position: relative;
+    top: 0;
+    transition: all .3s;
+    width: 207px;
+}
+
+.specialist .specialist_r ul li .item .img {
+    display: table-cell;
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+.specialist .specialist_r ul li .item .img img {
+    vertical-align: middle;
+    max-width: 186px;
+}
+
+.specialist .specialist_r ul li .item p {
+    margin: 7px auto 0;
+    width: 186px;
+    line-height: 20px;
+    height: 42px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    overflow: hidden;
+}
+
+.specialist .specialist_r ul li .item p a {
+    color: #666;
+}
+
+.specialist .specialist_r ul li .item .ask {
+    font-size: 12px;
+    background: linear-gradient(to bottom, #4ea4ef, #4b46f9);
+    display: block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+}
+
+.specialist .specialist_r ul li .line {
+    height: 221px;
+    width: 1px;
+    background: #d1cfd2;
+}
+
+/* 第二部分过渡 */
+.specialist .specialist_m ul li span:hover {
+    transform: translateY(-20px)
+}
+
+.specialist .specialist_r ul li div.item:hover {
+    transform: translateY(-30px)
+}
+
+.specialist .big-img a img:hover {
+    transform: scale(1.1);
+}

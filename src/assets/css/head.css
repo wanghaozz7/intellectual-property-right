@@ -1,0 +1,285 @@
+.head{
+    /*width: 100%;*/
+    /*margin: auto;*/
+}
+/*顶部登录*/
+.head .top{
+    height: 34px;
+    background: #fff;
+}
+.fr{
+    float: right;
+}
+.head .top .login_logon ul li a{
+    margin-top: 5px;
+    width: 120px;
+}
+.head .top .login{
+    color: #C8161D;
+}
+.head .top .logon{
+    color: #9b9b9b;
+}
+/* 导航 */
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #fff
+}
+
+
+.wrap {
+    width: 1226px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.nav-bar {
+    /*float: left;*/
+  display: flex;
+  width: 1220px;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.nav-bar ul li {
+    width: 12rem !important;
+    float: left;
+    /*display: flex;*/
+    text-align: center;
+    /*border-right: 1px solid #6a91c6;*/
+}
+
+.nav-bar ul li:first-child {
+    /*border-left: 1px solid #6a91c6;*/
+}
+
+.nav-bar ul li a {
+    width: 120px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 50px;
+    color: #595757;
+}
+
+.nav-bar ul li:hover {
+    /*background-color: #e9eef6;*/
+    /*border-bottom: 2px solid #000;*/
+}
+
+.nav-bar-list {
+    display: none;
+    position: absolute;
+    left: 155px;
+    z-index: 1000;
+    top: 50px;
+    height: 300px;
+    width: 1220px;
+    background-color: #1a56a8;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, .18);
+    float: none;
+    padding: 0 38;
+}
+
+
+.nav-bar li:hover > .nav-bar-list {
+    display: block;
+}
+
+.drop-list {
+    width: 16.66%;
+    height: 100%;
+    float: left;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+.drop-list h5 {
+    margin: 0 !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    font-size: 16px !important;
+    color: #fff !important;
+    font-weight: bold !important;
+}
+
+.drop-list a {
+    display: block;
+    margin: 5px 0;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px !important;
+    color: #dcdcdc !important;
+    font-weight: normal !important;
+}
+
+.drop-list a:hover {
+    color: #fff !important;
+}
+
+/* 导航结束 */
+/* main开始*/
+/* 轮播图 */
+.bt_main {
+    background-color: #fff;
+}
+
+.main1 {
+    width: 1220px;
+    height: 450px;
+    margin: 0 auto;
+    padding-top: 15px;
+    background: #ffffff;
+}
+
+.outer1 {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    padding-left: 0;
+    margin-left: 0;
+    float: left;
+}
+
+.outer2 {
+    position: absolute;
+    top: 380px;
+    left: 300px;
+}
+
+/* 轮播图结束 */
+/* 右边内容 */
+.main1 {
+    overflow: hidden;
+}
+
+.main1_right {
+    position: relative;
+    width: 575px;
+    height: 400px;
+    top: 0;
+    float: right;
+    flex-direction: row;
+}
+
+#one1 {
+    width: 130px;
+    text-align: center;
+    font-size: 22px;
+}
+
+#one2 {
+    width: 130px;
+    text-align: center;
+    font-size: 22px;
+
+}
+
+.tonul li a {
+    color: #595757;
+    /*font-weight: bold;*/
+    text-decoration: none;
+
+}
+
+.tonul li {
+    float: left;
+    height: 44px;
+    line-height: 44px;
+
+}
+
+#tonzhi {
+    font-weight: bold;
+    color: #595757;
+    display: block;
+    height: 44px;
+    /*border-bottom: 2px solid #000;*/
+    /*background: #2957a2;*/
+    text-decoration: none;
+}
+
+#zixun {
+    font-weight: bold;
+    color: #595757;
+    display: block;
+    height: 44px;
+    /*border-bottom: 2px solid #000;*/
+    /*background: #2957a2;*/
+    text-decoration: none;
+}
+
+.main1_right .tonul .active, .main1_right .tonul .current {
+    background: no-repeat center;
+}
+
+.xuanul {
+    width: 575px;
+    padding-top: 15px;
+    height: 231px !important;
+}
+
+.xuanul ul li {
+    width: 575px;
+    height: 36px;
+    line-height: 36px;
+    overflow: hidden;
+    list-style: disc inside;
+    color: #1369c0;
+    font-size: 16px;
+}
+
+.xuanul ul li span {
+    float: right;
+    color: #999999;
+}
+
+.xuanul ul li a {
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 85%;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    text-align: left;
+    font-size: large;
+    text-decoration: none;
+    color: #333;
+}
+
+#con-one-2 {
+    position: absolute;
+    float: left;
+    left: 0px;
+
+}
+
+/*#one2:hover{*/
+/*    background-color: #2957a2;*/
+/*}*/
+/*#one2:hover>a{*/
+/*    color: #ffffff;*/
+/*    font-weight: bold;*/
+/*}*/
+
+
+/* main结束 */

@@ -1,0 +1,222 @@
+.flex{
+    display: flex;
+}
+.content{
+    width: 970px;
+    margin: auto;
+}
+.person-detail {
+    height: 200px;
+    width: 930px;
+}
+.authentication{
+    width: 140px;
+    height: 35px;
+    background-color: #ffb915;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 35px;
+    margin-top: 15px;
+    position: relative;
+    right: 10px;
+}
+.back-white{
+    background-color: #fff;
+}
+.white-box-big{
+    padding: 28px 20px;
+    /*margin: 5px;*/
+}
+.personDetail-right{
+    margin-left: 20px;
+}
+.nameBg{
+    background-color: #6CAEEE;
+    width: 120px;
+    height: 120px;
+    /*padding-top: 14px;*/
+    /*padding-left: 29px;*/
+    border-radius: 2px;
+}
+.person-detail-right-name{
+    font-size: 20px;
+}
+.person-detail-right-school{
+    font-size: 14px;
+    color: #666666;
+    margin-left: 20px;
+}
+.surname-big-text{
+    text-align: center;
+    font-size: 60px;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 110px;
+}
+.person-detail-right-catalog-box{
+    font-size: 15px;
+    color: #666666;
+    margin-top: 5px;
+}
+.person-detail-right-datainfo{
+    margin-top: 30px;
+    width: 730px;
+    height: 94px;
+    background-color: #f9fcfe;
+}
+.datainfo-box{
+    margin: 10px 20px;
+}
+.datainfo-title{
+    font-size: 14px;
+    color: #888888;
+    margin-right: 10px;
+}
+.datainfo-data{
+    font-size: 15px;
+    color: #333333;
+}
+/* 同领域专家 */
+.Experts-same-expertInfo{
+    width: 970px;
+    flex-wrap: wrap;
+}
+.Experts-same-title{
+    margin-top: 2px;
+    height: 30px;
+    padding-top:10px;
+    padding-left: 10px;
+    margin-bottom: 2px;
+    /*background-color: red;*/
+}
+.Experts-same-title span{
+    font-size: 16px;
+    color: #555555;
+}
+.Experts-same-expertInfo-item{
+    align-items: center;
+    height: 110px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    width: 321px;
+}
+/* 合作伙伴 */
+.cooperative-partner-expertInfo{
+    width: 970px;
+    flex-wrap: wrap;
+}
+.cooperative-partner-title{
+    margin-top: 2px;
+    height: 30px;
+    padding-top:10px;
+    padding-left: 10px;
+    margin-bottom: 2px;
+    /*background-color: red;*/
+}
+.cooperative-partner-title span{
+    font-size: 16px;
+    color: #555555;
+}
+.cooperative-partner-expertInfo-item{
+    align-items: center;
+    height: 110px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    width: 321px;
+}
+.item-left{
+    width: 75px;
+    height: 75px;
+    background-color: #aadaa3;
+    margin-left: 10px;
+    text-align: center;
+    line-height: 75px;
+    flex-shrink:0;
+}
+.item-right{
+    position: relative;
+    top:6px;
+    margin-left: 10px;
+    overflow: hidden;
+}
+/* 姓氏的显示方式 */
+.name-display{
+    color: #FFFFFF;
+    font-size: 36px;
+}
+.Experts-tag{
+    width:200px;
+    height: 30px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    margin-top: 3px;
+    font-size: 14px;
+    color: #666666;
+}
+/* 产出成果 */
+.achievements{
+    width: 970px;
+    margin-top: 2px;
+}
+.achievements-title{
+    height: 40px;
+    /*margin-bottom: 2px;*/
+}
+.achievements-title span{
+    color: #555555;
+    font-size: 16px;
+    padding-left: 10px;
+    line-height: 40px;
+}
+/* 论文 */
+.paper{
+    /*height: 526px;*/
+}
+.paper-item{
+    display: flex;
+    border-bottom: 2px solid #f3f3f3;
+    margin-top: 20px;
+}
+.paper-item-left{
+    width: 65px;
+    height: 65px;
+    background-color: #aadaa3;
+    text-align: center;
+    line-height: 65px;
+}
+.paper-item-left span{
+    color: #fff;
+    font-size: 30px;
+}
+
+.paper-item-right{
+    width: 837px;
+    /*height: 160px;*/
+    margin: 0 10px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    /*background-color: red;*/
+}
+.paper-item-right .tag{
+    margin: 7px 0;
+}
+.paper-item-right .tag .el-tag{
+    margin: 0 16px 0 0;
+}
+.paper-item-right .detail{
+    font-size: 13px;
+    color: #888897;
+}
+/* 项目和课题 */
+.project{
+    display: flex;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    /*border-bottom: 1px solid #9b9b9b;*/
+    margin-bottom: 2px;
+}
+.project-info{
+    margin-left: 10px;
+}

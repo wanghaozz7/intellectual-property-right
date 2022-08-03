@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none !important;
+}
+/*a标签不变色*/
+a:link{
+    color: #000000;
+}
+a:visited{
+    color: #000000;
+}
+a:hover{
+    color: #000000;
+}
+a:active{
+    color: #000000;
+}
+
+body{
+    background: #f6f6f6;
+    /*width: 1280px;*/
+    /*!* 实现居中 *!*!*/
+    margin: auto;
+}
+.main{
+    width: 1226px;
+    /*width: 80vw;*/
+    margin: auto;
+}
+.footer{
+    width: 1226px;
+    margin: auto;
+}
+/*.main{*/
+/*    background: #f6f6f6;*/
+/*    width: 1280px;*/
+/*    !*!* 实现居中 *!*!*!*/
+/*    margin: auto;*/
+/*}*/
+/*.footer{*/
+/*    background: #f6f6f6;*/
+/*    width: 1280px;*/
+/*    !*!* 实现居中 *!*!*!*/
+/*    margin: auto;*/
+/*}*/
+/*.footerend{*/
+/*    background: #f6f6f6;*/
+/*    width: 1280px;*/
+/*    !*!* 实现居中 *!*!*!*/
+/*    margin: auto;*/
+/*}*/
+/*li{*/
+/*    list-style: none;*/
+/*    cursor:pointer;*/
+/*}*/
+/*.main{*/
+/*    width: 1280px;*/
+/*    !*text-align: center;*!*/
+/*    !* 实现居中 *!*/
+/*    margin: auto;*/
+/*}*/
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.fl{
+    float: left;
+}

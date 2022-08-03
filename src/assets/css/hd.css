@@ -1,0 +1,27 @@
+/*@import "patent.css";*/
+.hd ul li{
+    float: left;
+    padding: 0 18px;
+    height: 36px;
+    line-height: 36px;
+    margin-right: 10px;
+    border-radius: 18px;
+    /*li 标签转换成手型*/
+    cursor:pointer;
+}
+.hd ul li>span{
+    font-size: 18px;
+    color: #4a4a4a;
+}
+/*.hd ul>li:hover {*/
+/*    background: #4a79ff;*/
+/*    box-shadow: 0 2px 2px 0 rgb(74 121 255);*/
+/*}*/
+.hd-item:first-child {
+    background: #4a79ff;
+    box-shadow: 0 2px 2px 0 rgb(74 121 255);
+    color: white;
+}
+.hd-item:first-child span{
+    color: white;
+}

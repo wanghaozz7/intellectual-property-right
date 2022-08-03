@@ -1,0 +1,56 @@
+a{
+    text-decoration:none;
+}
+a:visited{
+    color: #fff;
+}
+.patent{
+    /*background-color: red;*/
+    position: relative;
+    width: 1226px;
+    height: 508px;
+    display: block;
+    overflow: hidden;
+    /* 实现居中 */
+    text-align: center;
+    margin: auto;
+}
+.item_wrap{
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+    top: 0;
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+    padding-top: 10px;
+    margin: 2px;
+    background: #fff;
+}
+.patent .item_wrap p{
+    margin: 7px auto 0;
+    width: 190px;
+    height: 43px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    overflow: hidden;
+}
+.patent .icon{
+    transition: all .3s;
+}
+.main .patent .item_wrap .littleFun{
+    background:linear-gradient(to bottom,#4ea4ef,#4b46f9);
+    font-size: 14px;
+    color: #fff;
+    margin: 0;
+    padding-top: 4px;
+    padding-bottom: 7px;
+}
+.main .patent .item_wrap .littleFun a{
+    color: #fff;
+}
+.patent .icon:hover{
+    transform:translateY(-30px)
+}
