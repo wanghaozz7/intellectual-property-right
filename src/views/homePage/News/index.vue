@@ -162,12 +162,13 @@ export default {
 
 <style scoped>
 .carousel{
-  width: 613px;
+  width: 606px;
   height: 431px;
   border: 1px solid #ffffff;
   border-radius: 10px;
   transition:all .3s;
-  /*background-color: #fff;*/
+  background-color: #fff;
+  margin-bottom: 14px;
 }
 .carousel:hover{
   border: 1px solid #b7b4b4;
@@ -178,7 +179,7 @@ export default {
   display: flex;
   height: 955px;
   width: 1226px;
-  margin: 20px auto;
+  margin: 28px auto;
   /*padding-top: 15px;*/
   /*padding-left: 30px;*/
   /*background: #ffffff;*/
@@ -194,8 +195,8 @@ export default {
 /*左边*/
 /*通知公告*/
 .notice{
-  width: 613px;
-  height: 518px;
+  width: 606px;
+  height: 504px;
   background: #ffffff;
   border-radius: 10px;
   padding: 20px 30px;
@@ -220,11 +221,11 @@ export default {
 }
 /* 右边 */
 .right{
-  margin-left: 10px;
+  margin-left: 14px;
 }
-/* 动态咨询 */
+/* 动态资讯 */
 .information{
-  width: 605px;
+  width: 606px;
   height: 950px;
   background: #ffffff;
   border-radius: 10px;

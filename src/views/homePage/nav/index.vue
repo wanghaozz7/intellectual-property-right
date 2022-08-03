@@ -14,27 +14,29 @@
             <li class="head_item"><a href="#">领域专家</a></li>
             <li class="head_item"><a href="#">企业需求</a></li>
             <li class="head_item"><a href="#">政策法规</a></li>
+            <li class="head_item"><a href="#">登录</a></li>
+            <li class="head_item"><a href="#">注册</a></li>
           </ul>
         </div>
       </div>
-      <el-carousel height="790px" >
+      <el-carousel height="790px">
         <el-carousel-item v-for="item, index in carousel" :key="index">
           <div style="width: 1226px; margin: 0 auto;position: relative;">
             <div class="carouselContent">
-              <div class="title">{{item.title}}</div>
-              <div class="English">{{item.English}}</div>
+              <div class="title">{{ item.title }}</div>
+              <div class="English">{{ item.English }}</div>
               <div class="content">
-                {{item.content1}}
+                {{ item.content1 }}
                 <br>
-                {{item.content2}}
+                {{ item.content2 }}
                 <!-- 数据流动、数据分析与数据存储将不可阻挡的形成跨域趋势<br />
                 TEMPLATE致力于打造基于EOS互联网3.0数据与应用 -->
               </div>
             </div>
           </div>
-<!--          <div class="img"></div>-->
-          <div class="img" :style="'width: 100%;height: 100%;'+'background-image:url('+item.imgUrl+')'">
-<!--            <img :src="item.imgUrl" alt="暂无图片" style="display: block;width: 100%; height: 100%;margin:0 auto;" />-->
+          <!--          <div class="img"></div>-->
+          <div class="img" :style="'width: 100%;height: 100%;' + 'background-image:url(' + item.imgUrl + ')'">
+            <!--            <img :src="item.imgUrl" alt="暂无图片" style="display: block;width: 100%; height: 100%;margin:0 auto;" />-->
           </div>
         </el-carousel-item>
       </el-carousel>
@@ -46,7 +48,7 @@
 import "@/assets/css/base.css";
 export default {
   name: "navPage",
-  data () {
+  data() {
     return {
       // el-carousel 容器高度
       bannerHeight: 0,
@@ -75,7 +77,7 @@ export default {
     };
   },
   // 解决轮播图的高度自适应
-  mounted () {
+  mounted() {
     this.screenWidth = window.innerWidth;
     // 首次加载时,初始化高度
     this.screenWidth = window.innerWidth;
@@ -101,6 +103,7 @@ export default {
   margin: 0 auto;
   z-index: 10;
 }
+
 .TopTitle {
   position: absolute;
   top: 60px;
@@ -110,11 +113,13 @@ export default {
   font-weight: bold;
   font-size: 2rem;
 }
+
 .English {
   font-size: 25px;
   color: #40e2ec;
   margin-bottom: 34px;
 }
+
 .carouselContent {
   position: absolute;
   top: 200px;
@@ -123,36 +128,45 @@ export default {
   /*background-color: red;*/
   /*z-index: 10;*/
 }
+
 .carouselContent .title {
   font-size: 3rem;
   font-weight: bold;
   color: #40e2ec;
 }
+
 .carouselContent .content {
   font-size: 12px;
   color: #22848a;
 }
+
 .head_item {
   width: 80px;
 }
+
 img {
   width: 100%;
 }
+
 .Nav {
   position: absolute;
   top: 60px;
   right: 0;
   /*z-index: 10;*/
 }
+
 .Nav a {
   color: white;
 }
+
 .Nav ul li {
   margin: 0 10px;
 }
+
 .Nav ul li a:hover {
   color: rgb(9, 163, 181);
 }
+
 .bigCarousel img {
   background-repeat: repeat;
 }

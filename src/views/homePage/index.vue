@@ -1,6 +1,6 @@
 <template>
   <div class="head clearfix">
-    <Top></Top>
+    <!-- <Top></Top> -->
     <Nav></Nav>
     <News></News>
     <Main></Main>
