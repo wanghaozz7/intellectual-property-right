@@ -90,7 +90,7 @@
         </router-link>
       </div>
       <div class="specialist clearfix">
-        <div style="display: flex;">
+        <div style="display: flex;" class="specialist_container">
           <div class="big-img fl clearfix">
             <a href="#" target="_blank">
               <img src="../../../assets/img/yzn.jpg" alt="">
@@ -197,10 +197,16 @@
   margin-right: 0;
 }
 
+.specialist_container :nth-child(3) {
+  margin-right: 0;
+}
+
 .patent_title {
   display: flex;
   position: relative;
 }
+
+
 
 .patent_title a {
   width: 100px;

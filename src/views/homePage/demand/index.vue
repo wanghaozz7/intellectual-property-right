@@ -138,49 +138,55 @@ export default {
 }
 </script>
 <style scoped>
-
-.demand{
+.demand {
   /*background-color: red;*/
   height: 470px;
   /*background-color: red;*/
-  margin: 20px auto;
+  margin: 30px auto;
 }
-a{
+
+a {
   color: black;
 }
-.title{
+
+.title {
   height: 40px;
   /*background-color: red;*/
 }
-.title>div{
+
+.title>div {
   /*text-align: center;*/
   position: relative;
   top: 20%;
 }
-.title div h2{
+
+.title div h2 {
   font-size: 28px;
   color: #4a4a4a;
 }
-.title div p{
+
+.title div p {
   position: absolute;
   right: 0;
   font-size: 20px;
-  color: rgba(000,000,000,.7);
+  color: rgba(000, 000, 000, .7);
 }
+
 /*内容*/
-.content{
+.content {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   /* flex 水平居中 */
-  justify-content:center;
+  justify-content: center;
   /* flex 垂直居中 */
-  align-items:center;
+  align-items: center;
   /*background-color: #fff;*/
   height: 400px;
   width: 1226px;
-  padding: 40px 90px;
+  /* padding: 40px 90px; */
 }
-.content .item{
+
+.content .item {
   display: flex;
   width: 400px;
   height: 200px;
@@ -188,46 +194,58 @@ a{
   padding: 30px;
 }
 
-.item .date h1{
+.item .date h1 {
   margin-top: 0;
   font-size: 60px;
-  color: rgba(000,000,000,.8);
+  color: rgba(000, 000, 000, .8);
 }
-.content .contentBlock{
-  margin: 0 10px;
+
+.content .contentBlock {
+  margin: 0 13px 0 0;
 
 }
-.content .contentBlock a>div{
-  margin: 20px 0;
+/* 最右侧 */
+.content :nth-child(3){
+  margin-right: 0;
+}
+
+.content .contentBlock a>div {
+  margin: 13px 0;
   transition: all .1s;
 }
-.content .contentBlock a>div:hover{
+
+.content .contentBlock a>div:hover {
   color: #4c6a86;
   transition: all .1s;
 }
-.content .item .itemContent{
+
+.content .item .itemContent {
   width: 220px;
 }
-.content .item .itemContent span{
+
+.content .item .itemContent span {
   font-size: 20px;
   display: block;
   height: 25px;
   overflow: hidden;
   margin-bottom: 10px;
-  text-overflow:ellipsis;
+  text-overflow: ellipsis;
 }
-.content .item .itemContent .textContent{
+
+.content .item .itemContent .textContent {
   width: 200px;
   height: 109px;
   color: #4a4a4a;
   overflow: hidden;
 }
-.content .item .time{
+
+.content .item .time {
   position: relative;
   top: 50%;
   margin: -30px 30px 0;
 }
-.content .item .time span{
+
+.content .item .time span {
   display: block;
   color: #ddd;
 }

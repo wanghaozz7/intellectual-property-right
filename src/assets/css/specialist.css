@@ -7,16 +7,15 @@
 }
 .main>.title{
     font-weight:normal;
-    margin-bottom: 20px;
-    margin-left: 20px;
+    margin-bottom: 30px;
 }
 .main>.title h2 {
     font-size: 28px;
     color: #4a4a4a;
 }
 .specialist .specialist_m ul li {
-    padding: 15px 0 0 20px;
-    width: 415px;
+    padding: 20px 0 0 20px;
+    width: 438px;
     height: 250px;
     box-sizing: border-box;
     transition: all .3s;
@@ -24,20 +23,20 @@
 }
 
 .specialist .specialist_m ul li:first-child {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 }
 
 .big-img {
     width: 350px;
     float: left;
-    margin: 0 auto 0 0;
+    margin: 0 14px 0 0;
     /*margin-right: 10px;*/
     position: relative;
     z-index: 1;
     /*background: red;*/
     /*width: 600px;*/
-    height: 510px;
-
+    height: 514px;
+    
     overflow: hidden;
 }
 
@@ -49,7 +48,7 @@
 .specialist_m{
     /* margin: 0 auto 0 0; */
     float: left;
-    width: 415px;
+    width: 438px;
     margin-right: 14px;
     /*background: white;*/
 }
@@ -112,7 +111,7 @@
 }
 
 .specialist .specialist_r ul li:first-child {
-    margin-bottom: 14px;
+    margin-bottom: 20px;
 }
 
 .specialist .specialist_r ul li .item {
