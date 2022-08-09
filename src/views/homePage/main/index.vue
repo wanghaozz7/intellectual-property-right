@@ -87,7 +87,7 @@
     <div>
       <div class="specialist_title">
         <h2>专家介绍</h2>
-        <router-link :to="{ name: 'moreExpert' }">
+        <router-link :to="{'name': 'expertSearch', 'query': {'city': '广州市'}}">
           <a class="" href="#">更多专家</a>
         </router-link>
       </div>

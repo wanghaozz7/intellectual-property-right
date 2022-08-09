@@ -6,9 +6,10 @@
           <span>知识产权对接平台</span>
         </div>
       </router-link>
-      <div class="search" v-if="sign">
+      <div class="search" v-if="sign" style="margin-left: 440px;">
         <el-input style="width: 480px;" v-model="input" placeholder="输入专家名称、技术信息，如“杨振宁 粒子物理学”"></el-input>
-        <el-button style="background-color: #2489f2;color:#fff;" slot="append" icon="el-icon-search"></el-button>
+        <el-button style="background-color: #2489f2;color:#fff; margin-left:10px;" slot="append" icon="el-icon-search">
+        </el-button>
       </div>
     </div>
   </div>
@@ -18,26 +19,30 @@
 </script>
 
 <style scoped>
-.contain{
+.contain {
   height: 86px;
   background-color: #fff;
   border-bottom: 1px solid #e3e3e3;
   margin-bottom: 10px;
 }
-.content{
+
+.content {
   display: flex;
-  width: 1200px;
+  width: 1226px;
   height: 86px;
   align-items: center;
-  margin: auto;
+  margin: 5px auto;
 }
-.search{
+
+.search {
   display: flex;
 }
-.title{
+
+.title {
   margin-right: 80px;
 }
-.title span{
+
+.title span {
   font-size: 20px;
   font-weight: bold;
   color: #000;
