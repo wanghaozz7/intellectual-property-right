@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!--  -->
     <div class="product clearfix">
       <div class="left fl" style="margin-top:20px;">
         <div class="img fl">

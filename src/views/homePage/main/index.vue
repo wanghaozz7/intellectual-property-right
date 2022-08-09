@@ -1,5 +1,6 @@
 <template>
   <div class="main clearfix">
+    <!-- 专利 -->
     <div style="margin: 28px auto">
       <div class="hd clearfix">
         <div class="patent_title">
@@ -8,14 +9,14 @@
               <i class="fa fa-bookmark-o fa-lg"></i>
               <span>最新专利</span>
             </li>
-            <li class="hd-item">
+            <!-- <li class="hd-item">
               <i class="fa fa-bookmark-o fa-lg"></i>
               <span>优选专利</span>
             </li>
             <li class="hd-item">
               <i class="fa fa-bookmark-o fa-lg"></i>
               <span>热门专利</span>
-            </li>
+            </li> -->
           </ul>
           <router-link :to="{ name: 'patentList' }">
             <a class="" href="#">更多专利</a>
@@ -82,6 +83,7 @@
         <!--        </div>-->
       </div>
     </div>
+    <!-- 专家 -->
     <div>
       <div class="specialist_title">
         <h2>专家介绍</h2>
