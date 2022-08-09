@@ -19,7 +19,7 @@
           </ul>
         </div>
       </div>
-      <el-carousel height="790px">
+      <el-carousel height="790px" style="min-width: 1226px;">
         <el-carousel-item v-for="item, index in carousel" :key="index">
           <div style="width: 1226px; margin: 0 auto;position: relative;">
             <div class="carouselContent">
@@ -124,7 +124,7 @@ export default {
   position: absolute;
   top: 200px;
   /*background-color:red;*/
-  left: 0;
+  left: 50px;
   /*background-color: red;*/
   /*z-index: 10;*/
 }
