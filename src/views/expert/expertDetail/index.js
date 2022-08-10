@@ -18,7 +18,8 @@ export default {
       paperList: [],
       patentList: [],
       projectList: [],
-      tag_active: 'paper'
+      tag_active: 'paper',
+      selected_tab:'产出和成果'
     }
   },
   created () {

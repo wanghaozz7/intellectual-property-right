@@ -2,12 +2,12 @@
     display: flex;
 }
 .content{
-    width: 970px;
+    width: 1226px;
     margin: auto;
 }
 .person-detail {
     height: 200px;
-    width: 930px;
+    width: 1226px;
 }
 .authentication{
     width: 140px;
@@ -79,7 +79,7 @@
 }
 /* 同领域专家 */
 .Experts-same-expertInfo{
-    width: 970px;
+    width: 1226px;
     flex-wrap: wrap;
 }
 .Experts-same-title{
@@ -99,11 +99,12 @@
     height: 110px;
     margin-right: 2px;
     margin-bottom: 2px;
-    width: 321px;
+    width: 305px;
 }
+
 /* 合作伙伴 */
 .cooperative-partner-expertInfo{
-    width: 970px;
+    width: 1226px;
     flex-wrap: wrap;
 }
 .cooperative-partner-title{
@@ -123,7 +124,7 @@
     height: 110px;
     margin-right: 2px;
     margin-bottom: 2px;
-    width: 321px;
+    width: 305px;
 }
 .item-left{
     width: 75px;
@@ -157,7 +158,7 @@
 }
 /* 产出成果 */
 .achievements{
-    width: 970px;
+    width: 1226 px;
     margin-top: 2px;
 }
 .achievements-title{
@@ -192,7 +193,7 @@
 }
 
 .paper-item-right{
-    width: 837px;
+    width: 1141px;
     /*height: 160px;*/
     margin: 0 10px;
     overflow: hidden;
