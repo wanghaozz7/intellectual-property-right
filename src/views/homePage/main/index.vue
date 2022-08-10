@@ -2,26 +2,11 @@
   <div class="main clearfix">
     <!-- 专利 -->
     <div style="margin: 28px auto">
-      <div class="hd clearfix">
-        <div class="patent_title">
-          <ul>
-            <li class="hd-item on">
-              <i class="fa fa-bookmark-o fa-lg"></i>
-              <span>最新专利</span>
-            </li>
-            <!-- <li class="hd-item">
-              <i class="fa fa-bookmark-o fa-lg"></i>
-              <span>优选专利</span>
-            </li>
-            <li class="hd-item">
-              <i class="fa fa-bookmark-o fa-lg"></i>
-              <span>热门专利</span>
-            </li> -->
-          </ul>
-          <router-link :to="{ name: 'patentList' }">
-            <a class="" href="#">更多专利</a>
-          </router-link>
-        </div>
+      <div class="specialist_title" style="margin: 20px 0;">
+        <h2>最新专利</h2>
+        <router-link :to="{ name: 'patentList' }" href="#" style="right: 0;width: 90px;">
+          <a href="#" style="right: 0;width: 82px;top: 0;">更多专利</a>
+        </router-link>
       </div>
       <div style="display: flex; margin-top:5px;">
         <div class="patent index1">
@@ -41,7 +26,7 @@
             </div>
           </div>
         </div>
-        <div class="patent index2">
+        <!-- <div class="patent index2">
           <div class="item_wrap clearfix" v-for="item in patentList1" :key="item.id">
             <div class="icon">
               <div class="item_img" style="width:200px;height:190px">
@@ -74,7 +59,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <!--        <div class="experts">-->
         <!--          <span>Experts</span>-->
         <!--          <h2>专利大数据</h2>-->
@@ -87,8 +72,8 @@
     <div>
       <div class="specialist_title">
         <h2>专家介绍</h2>
-        <router-link :to="{'name': 'expertSearch', 'query': {'city': '广州市'}}">
-          <a class="" href="#">更多专家</a>
+        <router-link :to="{ 'name': 'expertSearch', 'query': { 'city': '广州市' } }" style="right: 0;width: 90px;">
+          <a href="#" style="right: 0;width: 82px;top: 0;">更多专家</a>
         </router-link>
       </div>
       <div class="specialist clearfix">

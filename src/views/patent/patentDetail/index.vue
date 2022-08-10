@@ -39,10 +39,11 @@
                 申请类型：
                 <span title="发明"> {{ patentInfo.patent_type_name }} </span>
               </div>
-              <div class="item_industry fl">
-                法律状态：
-                <span title="法律状态"> {{ patentInfo.ls1 }} </span>
-              </div>
+
+            </div>
+            <div class="item_industry fl">
+              法律状态：
+              <span title="法律状态"> {{ patentInfo.ls1 }} </span>
             </div>
             <!-- <p>
               有效期：
@@ -51,7 +52,7 @@
               </span>
             </p> -->
           </div>
-          <div class="item_bottom">
+          <!-- <div class="item_bottom">
             <div class="item_bottom_first">
               <div class="sell_price">
                 出售价格：
@@ -63,7 +64,7 @@
                 <a href="javascript:void(0)">立即咨询</a>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -71,46 +72,52 @@
       <div class="zl_about_cover" style="display: none"></div>
       <div class="zl_about_con">
         <div class="zl_about_part zl_detail">
+          <!-- 专利详情 -->
           <div class="zl_about_part_title" style="margin-bottom: 10px;">
             <span>专利详情</span>
           </div>
           <div class="zl_detail_con">
             <div class="famous">
-              <div class="famous-left">
+              <div class="famous-left" style="width: 50%;">
                 <ul>
-                  <li v-for="(item,index) in detailList" v-if="index<detailList.length/2" style="margin: 20px 0;">
-                    <div class="name">{{item.name}}</div>
-                    <span class="value">{{item.value}}</span>
+                  <li v-for="(item, index) in detailList" v-if="index < detailList.length / 2" style="margin: 20px 0;">
+                    <div class="name">{{ item.name }}</div>
+                    <span class="value">{{ item.value }}</span>
                   </li>
                 </ul>
               </div>
-              <div class="famous-right">
+              <div class="famous-right" style="width: 50%;">
                 <ul>
-                  <li v-for="(item,index) in detailList" v-if="index>=detailList.length/2" style="margin: 20px 0;">
-                    <div class="name">{{item.name}}</div>
-                    <span class="value">{{item.value}}</span>
+                  <li v-for="(item, index) in detailList" v-if="index >= detailList.length / 2" style="margin: 20px 0;">
+                    <div class="name">{{ item.name }}</div>
+                    <span class="value">{{ item.value }}</span>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
+          <!-- 摘要 -->
           <div class="zl_about_part_title" style="margin-bottom: 10px;">
             <span>摘要</span>
           </div>
           <div class="abstract">
-              <p>
-                {{ patentInfo.abstract_text }}
-              </p>
+            <p>
+              {{ patentInfo.abstract_text }}
+            </p>
+          </div>
+          <!-- 说明书 -->
+          <div class="zl_about_part_title" style="margin-bottom: 10px;">
+            <span>说明书</span>
+          </div>
+          <div class="abstract">
+            <p>
+              {{ patentInfo.abstract_text }}
+            </p>
           </div>
         </div>
       </div>
     </div>
-    <el-image-viewer
-        v-if="previewImg"
-        :on-close="closePreviewImage"
-        :url-list="imgUrl"
-        :z-index="9999"
-    />
+    <el-image-viewer v-if="previewImg" :on-close="closePreviewImage" :url-list="imgUrl" :z-index="9999" />
   </div>
 </template>
 
