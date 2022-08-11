@@ -11,7 +11,7 @@ const defaultListQuery = {
 export default {
   name: 'ExpertSearch',
   components: { Pagination, Top },
-  data () {
+  data() {
     return {
       listQuery: Object.assign({}, defaultListQuery),
       total: 0,
@@ -35,20 +35,20 @@ export default {
       searchCondition: {}
     }
   },
-  created () {
+  created() {
     this.listQuery.city = this.$route.query.city
     this.getTalent()
     this.area()
   },
   filters: {
-    filterNumber (value) {
+    filterNumber(value) {
       const patter = /^(.*)(?=\()/
       return patter.exec(value)[0]
     }
   },
   methods: {
     // 获取专家列表
-    getTalent () {
+    getTalent() {
       talentList(this.listQuery).then(res => {
         this.talentList = res.results
         for (let i = 0; i < res.results.length; i++) {
@@ -58,36 +58,37 @@ export default {
       })
     },
 
-    getTopic (index) {
+    getTopic(index) {
       this.selectedIndex = index
     },
     // 特殊荣誉
-    SpecialHonor (index) {
+    SpecialHonor(index) {
       this.SpecialHonorIndex = index
       if (index > -1) this.searchCondition.SpecialHonor = this.SpecialHonorList[this.SpecialHonorIndex]
     },
     // H因子范围
-    H_factor (index) {
+    H_factor(index) {
       this.H_factorIndex = index
       if (index > -1) this.searchCondition.H_factor = this.H_factorList[this.H_factorIndex]
     },
     //  领域范围
-    Domain_scope (index) {
+    Domain_scope(index) {
       this.Domain_scopeIndex = index
       if (index > -1) this.searchCondition.Domain_scope = this.Domain_scopeList[this.Domain_scopeIndex]
+      this.getTalent();
     },
     //  高校机构
-    School (index) {
+    School(index) {
       this.SchoolIndex = index
       if (index > -1) this.searchCondition.School = this.SchoolList[this.SchoolIndex]
     },
     // 地域
-    area () {
+    area() {
       this.areaList = this.listQuery.city
       this.searchCondition.city = this.areaList
     },
     // 取消
-    cancel (index) {
+    cancel(index) {
       if (index === 'city') return
       const newSearchCondition = this.searchCondition
       delete newSearchCondition[index]

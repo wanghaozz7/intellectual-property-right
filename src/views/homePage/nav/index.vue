@@ -14,7 +14,7 @@
             <li class="head_item"><a href="#">领域专家</a></li>
             <li class="head_item"><a href="#">企业需求</a></li>
             <li class="head_item"><a href="#">政策法规</a></li>
-            <li class="head_item"><a href="#">登录</a></li>
+            <li class="head_item" style="margin-left:100px"><a href="#">登录</a></li>
             <li class="head_item"><a href="#">注册</a></li>
           </ul>
         </div>
@@ -122,9 +122,9 @@ export default {
 
 .carouselContent {
   position: absolute;
-  top: 200px;
+  top: 300px;
   /*background-color:red;*/
-  left: 50px;
+  left: 100px;
   /*background-color: red;*/
   /*z-index: 10;*/
 }
@@ -158,9 +158,14 @@ img {
 .Nav a {
   color: white;
 }
+.Nav ul{
+  height: 42px;
+}
 
 .Nav ul li {
   margin: 0 10px;
+  width: auto;
+  line-height: 42px;
 }
 
 .Nav ul li a:hover {
