@@ -3,11 +3,11 @@
     <div class="content">
       <router-link to="/moreExpert">
         <div class="title">
-          <span>知识产权对接平台</span>
+          <span style="width: 160px;">知识产权服务平台</span>
         </div>
       </router-link>
       <div class="search" v-if="sign" style="margin-left: 440px;">
-        <el-input style="width: 480px;" v-model="input" placeholder="输入专家名称、技术信息，如“杨振宁 粒子物理学”"></el-input>
+        <el-input style="width: 480px;" v-model="input"></el-input>
         <el-button style="background-color: #2489f2;color:#fff; margin-left:10px;" slot="append" icon="el-icon-search">
         </el-button>
       </div>
@@ -40,6 +40,7 @@
 
 .title {
   margin-right: 80px;
+  width: 160px;
 }
 
 .title span {

@@ -4,7 +4,7 @@
       <div class="content">
         <router-link to="/patentList">
           <div class="title">
-            <span>知识产权对接平台</span>
+            <span style="width: 160px;">知识产权服务平台</span>
           </div>
         </router-link>
         <div class="search" style="margin-left: 440px;">
@@ -122,6 +122,7 @@
 
 .title {
   margin-right: 80px;
+  width: 160px;
 }
 
 .title span {
