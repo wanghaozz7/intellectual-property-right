@@ -160,7 +160,9 @@
                   <el-tag type="warning" style="max-width: 200px;overflow: hidden;text-overflow: ellipsis;">{{ data.org
                   }}
                   </el-tag>
-                  <div class="Experts-tag"> {{ data.domain }} </div>
+                  <el-tag v-for="(item, idx) in domains_tag[i]"
+                    style="max-width: 100px;overflow: hidden;text-overflow: ellipsis;margin-left: 10px;"
+                    :type=domains_color[i][idx]>{{ item }}</el-tag>
                 </div>
               </div>
             </div>
@@ -182,7 +184,9 @@
                   <el-tag type="warning" style="max-width: 200px;overflow: hidden;text-overflow: ellipsis;">{{ data.org
                   }}
                   </el-tag>
-                  <div class="Experts-tag"> {{ data.domain }} </div>
+                  <el-tag v-for="(item, idx) in orgs_tag[i]"
+                    style="max-width: 100px;overflow: hidden;text-overflow: ellipsis;margin-left: 10px;"
+                    :type=orgs_color[i][idx]>{{ item }}</el-tag>
                 </div>
               </div>
             </div>
@@ -202,9 +206,21 @@
                 <div class="item-right">
                   <p class="name" style="margin-bottom: 3px"> {{ data.name }} </p>
                   <el-tag style="max-width: 200px;overflow: hidden;text-overflow: ellipsis;"> {{ data.org }} </el-tag>
-                  <div class="Experts-tag">
+                  <!-- <div class="Experts-tag">
                     合作：论文{{ data.paperCoTimes }}次，专利{{ data.patentCoTimes }}次，科研项目{{ data.projectCoTimes }}次
-                  </div>
+                  </div> -->
+                </div>
+                <div class="item-right">
+                  <p class="name" style="margin-bottom: 3px;margin-left: 10px;">合作</p>
+                  <el-tag style="max-width: 100px;overflow: hidden;text-overflow: ellipsis;margin-left: 10px;"
+                    type="success">
+                    论文{{ data.paperCoTimes }}次</el-tag>
+                  <el-tag style="max-width: 100px;overflow: hidden;text-overflow: ellipsis;margin-left: 10px;"
+                    type="success">
+                    专利{{ data.patentCoTimes }}次</el-tag>
+                  <el-tag style="max-width: 100px;overflow: hidden;text-overflow: ellipsis;margin-left: 10px;"
+                    type="success">
+                    科研项目{{ data.projectCoTimes }}次</el-tag>
                 </div>
               </div>
             </div>
@@ -224,11 +240,4 @@
 <script src="./index.js"></script>
 
 <style scoped>
-.Experts-same-expertInfo :nth-child(4n) {
-  margin-right: 0;
-}
-
-.cooperative-partner-expertInfo :nth-child(4n) {
-  margin-right: 0;
-}
 </style>

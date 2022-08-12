@@ -97,9 +97,8 @@
 .Experts-same-expertInfo-item{
     align-items: center;
     height: 110px;
-    margin-right: 2px;
     margin-bottom: 2px;
-    width: 305px;
+    width: 1226px;
 }
 
 /* 合作伙伴 */
@@ -122,9 +121,8 @@
 .cooperative-partner-expertInfo-item{
     align-items: center;
     height: 110px;
-    margin-right: 2px;
     margin-bottom: 2px;
-    width: 305px;
+    width: 1226px;
 }
 .item-left{
     width: 75px;

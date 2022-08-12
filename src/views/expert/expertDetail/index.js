@@ -8,7 +8,7 @@ export default {
   components: {
     Top
   },
-  data () {
+  data() {
     return {
       uri: '',
       talent: {},
@@ -19,10 +19,15 @@ export default {
       patentList: [],
       projectList: [],
       tag_active: 'paper',
-      selected_tab:'产出和成果'
+      selected_tab: '产出和成果',
+      color_card: ['', 'success', 'info', 'warning', 'danger'],
+      domains_tag: [],
+      domains_color: [],
+      orgs_tag:[],
+      orgs_color:[]
     }
   },
-  created () {
+  created() {
     this.uri = this.$route.query.uri
     this.getTalentDetail()
     this.getCoAuthor()
@@ -32,7 +37,7 @@ export default {
   },
   methods: {
     // 获取专家的基本信息
-    getTalentDetail () {
+    getTalentDetail() {
       talentDetail(this.uri).then(res => {
         this.talent = res
 
@@ -69,21 +74,32 @@ export default {
     },
 
     // 获取专家的合作伙伴
-    getCoAuthor () {
+    getCoAuthor() {
       talentCoAuthor(this.uri).then(res => {
         this.coAuthor = res.coAuthors
       })
     },
 
     // 获取专家的同领域专家
-    getSameDomains () {
+    getSameDomains() {
       talentSameDomains(this.uri).then(res => {
         this.sameDomains = res.sameDomains
+        // 解构标签
+        for (let tmp of this.sameDomains) {
+          const domains = tmp.domain.split(';');
+          this.domains_tag.push(domains);
+          let colors = [], length = domains.length;
+          for (let i = 0; i < length; i++) {
+            const color = this.random_color();
+            colors.push(color);
+          }
+          this.domains_color.push(colors);
+        }
       })
     },
 
     // 获取专家的专利，论文和项目
-    getTalentItems () {
+    getTalentItems() {
       talentItems(this.uri).then(res => {
         if (res.paper) {
           for (let i = 0; i < res.paper.length; i++) {
@@ -100,13 +116,29 @@ export default {
       })
     },
     // 获取专家的同机构专家
-    getSameOrgs () {
+    getSameOrgs() {
       talentSameOrganization(this.uri).then(res => {
         this.sameOrgs = res.sameOrgs
+        // 解构标签
+        for (let tmp of this.sameOrgs) {
+          const orgs = tmp.domain.split(';');
+          this.orgs_tag.push(orgs);
+          let colors = [], length = orgs.length;
+          for (let i = 0; i < length; i++) {
+            const color = this.random_color();
+            colors.push(color);
+          }
+          this.orgs_color.push(colors);
+        }
       })
+      console.log(this.orgs_color);
     },
-    achievements_tag_handle (tab, event) {
+    achievements_tag_handle(tab, event) {
       console.log(tab, event);
+    },
+    random_color() {
+      let idx = Math.ceil(Math.random() * 5) - 1;
+      return this.color_card[idx];
     }
   }
 }
