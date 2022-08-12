@@ -20,25 +20,27 @@ export default {
       searchRangeList: ['不限', '姓名', '领域', '标签', '机构', '论文', '专利', '项目'],
       //  特殊荣誉
       SpecialHonorIndex: -1,
-      SpecialHonorList: ['新世纪优秀人才(274)', '杰出青年基金(274)', '长江学者(274)', '万人计划(274)', '货架自然科学基金优秀青年科学积基金(274)'],
+      SpecialHonorList: ['新世纪优秀人才', '杰出青年基金', '长江学者', '万人计划', '货架自然科学基金优秀青年科学积基金'],
       //  H因子范围
       H_factorIndex: -1,
-      H_factorList: ['未识别(229652)', '0-5(81168)', '6-10(19687)', '11-15(5933)', '16-20(2306)', '21-25(955)', '>25(1019)'],
+      H_factorList: ['未识别', '0-5', '6-10', '11-15', '16-20', '21-25', '>25'],
       //  领域范围
       Domain_scopeIndex: -1,
-      Domain_scopeList: ['本实用新型(14270)', '制备(12355)', '临床检验诊断学(7041)', '肿瘤学(6601)', '中西医结合(6322)', '护理学(6030)', '应用(274)'],
+      Domain_scopeList: ['本实用新型', '制备', '临床检验诊断学', '肿瘤学', '中西医结合', '护理学', '应用'],
       // 机构高校
       SchoolIndex: -1,
-      SchoolList: ['华南理工大学(23323)', '中山大学(16066)', '广东工业大学(10998)', '华南农业大学(9275)', '保洁公司(8967)', '暨南大学(8966)'],
+      SchoolList: ['华南理工大学', '中山大学', '广东工业大学', '华南农业大学', '保洁公司', '暨南大学'],
       //  地域
-      areaList: '',
+      areaIndex: -1,
+      areaList: ['广州市', '韶关市', '深圳市', '珠海市', '汕头市'],
       searchCondition: {}
     }
   },
   created() {
     this.listQuery.city = this.$route.query.city
     this.getTalent()
-    this.area()
+    this.area(0)
+
   },
   filters: {
     filterNumber(value) {
@@ -51,6 +53,8 @@ export default {
     getTalent() {
       talentList(this.listQuery).then(res => {
         this.talentList = res.results
+
+        console.log(this.talentList);
         for (let i = 0; i < res.results.length; i++) {
           if (res.results[i].domains) this.talentList[i].domains = res.results[i].domains.join('/')
         }
@@ -83,9 +87,9 @@ export default {
       if (index > -1) this.searchCondition.School = this.SchoolList[this.SchoolIndex]
     },
     // 地域
-    area() {
-      this.areaList = this.listQuery.city
-      this.searchCondition.city = this.areaList
+    area(idx) {
+      this.areaIndex = idx;
+      this.searchCondition.city = this.areaList[this.areaIndex];
     },
     // 取消
     cancel(index) {

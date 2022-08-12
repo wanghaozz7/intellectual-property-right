@@ -41,7 +41,7 @@
           </el-card>
         </el-main>
       </el-container>
-      <el-dialog :visible.sync="dialogVisible">
+      <el-dialog :visible.sync="dialogVisible" width="1030px" top="7vh">
         <el-form ref="form" :model="form" label-width="150px" label-position=left>
           <el-form-item v-for="item in elForm" :key="item.fieldName" :label="item.label" label-position="left">
             <el-input v-if="item.type === 'input'" :placeholder="item.placeholder" v-model="form[item.fieldName]"

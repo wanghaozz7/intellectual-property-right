@@ -4,7 +4,6 @@
       <div style="display: flex">
         <h2>企业最新需求</h2>
         <p>
-          需求处置跟进，查看
           <router-link to="/demandDetail">
             <a href="" style="color: #196aa9">更多需求
             </a>
