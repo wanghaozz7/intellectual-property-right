@@ -43,7 +43,7 @@
           <div class="search-Range-down-item">
             <div class="left">地域</div>
             <div class="right">
-              <div v-for="(item, idx) of areaList" class='right-item'  @click="area(idx)" 
+              <div v-for="(item, idx) of areaList" class='right-item' @click="area(idx)"
                 :class="areaIndex === idx ? 'right-item active' : 'right-item'">{{ item }}
               </div>
             </div>

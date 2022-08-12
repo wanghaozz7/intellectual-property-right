@@ -53,15 +53,12 @@ export default {
     getTalent() {
       talentList(this.listQuery).then(res => {
         this.talentList = res.results
-
-        console.log(this.talentList);
         for (let i = 0; i < res.results.length; i++) {
           if (res.results[i].domains) this.talentList[i].domains = res.results[i].domains.join('/')
         }
         this.total = res.count
       })
     },
-
     getTopic(index) {
       this.selectedIndex = index
     },

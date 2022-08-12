@@ -227,7 +227,8 @@
 .Experts-same-expertInfo :nth-child(4n) {
   margin-right: 0;
 }
-.cooperative-partner-expertInfo :nth-child(4n){
+
+.cooperative-partner-expertInfo :nth-child(4n) {
   margin-right: 0;
 }
 </style>
