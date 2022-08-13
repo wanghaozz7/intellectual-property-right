@@ -122,24 +122,28 @@
       </div>
     </div>
     <el-image-viewer v-if="previewImg" :on-close="closePreviewImage" :url-list="imgUrl" :z-index="9999" />
-    <el-dialog title="专利求购" :visible.sync="dialogFormVisible">
-      <el-form ref="form" :model="form" label-width="80px">
-        <el-form-item label="专利名称">
-          <span>11111111111</span>
+    <el-dialog title="专利求购" :visible.sync="dialogFormVisible" width="700px" top="10vh">
+      <el-form ref="form" :model="form" label-width="80px" label-position="left">
+        <el-form-item label="专利名称:">
+          <span>{{ patentInfo.title }}</span>
         </el-form-item>
-        <el-form-item label="专利类型">
-          <span>222222222222</span>
+        <el-form-item label="专利类型:">
+          <span>{{ patentInfo.patent_type_name }}</span>
         </el-form-item>
-        <el-form-item label="要求">
-          <span>3333333333333</span>
+        <el-form-item label="要求:">
+          <span>想要买专利{{ patentInfo.title }}</span>
         </el-form-item>
-        <el-form-item label="姓名">
-          <el-input></el-input>
+        <el-form-item label="姓名:">
+          <el-input v-model="form.name" placeholder="您的姓名"></el-input>
         </el-form-item>
-        <el-form-item label="手机号码">
-          <el-input></el-input>
+        <el-form-item label="手机号码:">
+          <el-input v-model="form.phone_number" placeholder="您的电话"></el-input>
         </el-form-item>
       </el-form>
+      <div class="item_ask" style="float: none;">
+        <a href="javascript:void(0)" style="margin: 0 auto;" @click="dialogFormVisible = false">确定</a>
+      </div>
+      <p style="text-align: center;margin-top: 10px;color: #a1a3a6;"><i class="el-icon-lock"></i> 信息保护中，请放心填写</p>
     </el-dialog>
   </div>
 </template>

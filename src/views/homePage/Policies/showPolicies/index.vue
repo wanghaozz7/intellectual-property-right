@@ -29,4 +29,8 @@ export default {
 </script>
 
 <style scoped>
+/* 分割线 */
+.el-divider--horizontal {
+  margin: 12px 0 24px 0;
+}
 </style>

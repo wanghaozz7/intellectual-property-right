@@ -73,27 +73,28 @@ const detailLIst = [
 export default {
   name: "patentDetail",
   components: { ElImageViewer },
-  data () {
+  data() {
     return {
       patentInfo: {},
       previewImg: false,
       imgUrl: [],
       detailLIst,
       abstract: '本装置包括：具有多级的压缩单元，所述单元被供应来自低温的气体并在电机供应压力下供应气体；再液化系统，具有液体到所述温度的出口和交换器，其布置在所述温蒂和所述压缩单元之间，以在蒸发气体进入所述压缩单元之前加热来自所述的所述蒸发气体。来自低温的气体并在电机供应压力下供应气体；再液化系统，具有液体到所述温度的出口和交换器，其布置在所述温蒂和所述压缩单元之间，以在蒸发气体进入所述压缩单元之前加热来自所述的所述蒸发气体。',
-      dialogFormVisible:false,
-      form:{
-        
+      dialogFormVisible: false,
+      form: {
+        name: '',
+        phone_number: ''
       }
     }
   },
-  created () {
+  created() {
     this.patentId = this.$route.query.patent
     this.getPatentDetail()
   },
   methods: {
 
     // 获取专利详情
-    getPatentDetail () {
+    getPatentDetail() {
       patentDetail(this.patentId).then(res => {
         this.patentInfo = res
         // this.detailList = [
@@ -126,7 +127,7 @@ export default {
       })
     },
 
-    onclickImg (index) {
+    onclickImg(index) {
       this.imgUrl = this.patentInfo.base_image_lst
       this.previewImg = true
       const fileListLength = this.patentInfo.base_image_lst.length
@@ -135,7 +136,7 @@ export default {
       this.imgUrl = temp1.concat(temp2)
     },
     // 关闭预览图片
-    closePreviewImage () {
+    closePreviewImage() {
       this.previewImg = false
     },
   }
