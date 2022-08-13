@@ -1,8 +1,9 @@
 <template>
   <div>
-    <!--  -->
+    <!-- 顶部 -->
     <div class="product clearfix">
       <div class="left fl" style="margin-top:20px;">
+        <!-- 轮播图 -->
         <div class="img fl">
           <!-- <a :href="patentInfo.base_image" target="_blank">
             <img :src="patentInfo.image" alt="">
@@ -18,9 +19,11 @@
             </el-carousel-item>
           </el-carousel>
         </div>
+        <!-- 基本信息 -->
         <div class="productDetail fl">
-          <div class="item_head">
-            <h1> {{ patentInfo.title }} </h1>
+          <!-- 标题 -->
+          <div class="item_head" style="height: 80px;">
+            <h1 style="font-size: 18px;"> {{ patentInfo.title }} </h1>
           </div>
           <div class="dash_line"></div>
           <div class="item_content">
@@ -52,22 +55,23 @@
               </span>
             </p> -->
           </div>
-          <!-- <div class="item_bottom">
+          <div class="item_bottom">
             <div class="item_bottom_first">
-              <div class="sell_price">
+              <!-- <div class="sell_price">
                 出售价格：
                 <span>
                         面议
                     </span>
-              </div>
+              </div> -->
               <div class="item_ask">
-                <a href="javascript:void(0)">立即咨询</a>
+                <a href="javascript:void(0)" @click="dialogFormVisible = true">立即咨询</a>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
+    <!-- 具体信息 -->
     <div class="z_about">
       <div class="zl_about_cover" style="display: none"></div>
       <div class="zl_about_con">
@@ -118,11 +122,29 @@
       </div>
     </div>
     <el-image-viewer v-if="previewImg" :on-close="closePreviewImage" :url-list="imgUrl" :z-index="9999" />
+    <el-dialog title="专利求购" :visible.sync="dialogFormVisible">
+      <el-form ref="form" :model="form" label-width="80px">
+        <el-form-item label="专利名称">
+          <span>11111111111</span>
+        </el-form-item>
+        <el-form-item label="专利类型">
+          <span>222222222222</span>
+        </el-form-item>
+        <el-form-item label="要求">
+          <span>3333333333333</span>
+        </el-form-item>
+        <el-form-item label="姓名">
+          <el-input></el-input>
+        </el-form-item>
+        <el-form-item label="手机号码">
+          <el-input></el-input>
+        </el-form-item>
+      </el-form>
+    </el-dialog>
   </div>
 </template>
 
 <script src="./index.js"></script>
 
 <style scoped>
-
 </style>

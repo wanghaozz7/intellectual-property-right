@@ -53,22 +53,22 @@ li {
 
 .product .left .productDetail .dash_line {
   margin-left: 24px;
-  width: 598px;
+  width: 500px;
   border-top: 1px dashed #d1cfd2;
   margin-top: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .product .left .productDetail .item_content {
   padding-left: 24px;
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
   padding-right: 24px;
 }
 
 .product .left .productDetail .line_wrap {
   height: 22px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .line_wrap>div:first-child {
@@ -102,7 +102,7 @@ li {
 
 .item_bottom {
   padding-left: 24px;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 .item_bottom_first {
