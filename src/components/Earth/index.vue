@@ -1,7 +1,10 @@
 <template>
   <div class="outside-container">
-    <div id="container">
+    <div class="Anchor">
+      <div id="container">
+      </div>
     </div>
+
   </div>
 </template>
 
@@ -35,7 +38,18 @@ export default {
   position: absolute;
   width: 600px;
   height: 600px;
-  top: 50px;
-  right: 400px;
+  right: 0;
+  top: 75px;
+}
+
+.Anchor {
+  width: 1226px;
+  height: 500px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
 }
 </style>
