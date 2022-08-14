@@ -4,10 +4,7 @@
       <div style="display: flex">
         <h2>企业最新需求</h2>
         <p>
-          <router-link to="/demandDetail">
-            <a href="" style="color: #196aa9">更多需求
-            </a>
-          </router-link>
+          <a href="/#/demandDetail" style="color: #196aa9" target="_blank">更多需求</a>
         </p>
       </div>
     </div>
@@ -203,8 +200,9 @@ a {
   margin: 0 13px 0 0;
 
 }
+
 /* 最右侧 */
-.content :nth-child(3){
+.content :nth-child(3) {
   margin-right: 0;
 }
 

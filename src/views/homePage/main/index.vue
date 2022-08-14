@@ -4,9 +4,12 @@
     <div style="margin: 28px auto">
       <div class="specialist_title" style="margin: 20px 0;">
         <h2>最新专利</h2>
-        <router-link :to="{ name: 'patentList' }" href="#" style="right: 0;width: 90px;">
-          <a href="#" style="right: 0;width: 82px;top: 0;">更多专利</a>
-        </router-link>
+        <div style="right: 0;width: 90px;">
+          <a href="patentlist#/patent" style="right: 0;width: 82px;top: 0;" target="_blank">更多专利</a>
+        </div>
+        <!-- <router-link :to="{ name: 'patentList' }" href="#" style="right: 0;width: 90px;">
+          <a href="patentlist#/patent" style="right: 0;width: 82px;top: 0;">更多专利</a>
+        </router-link> -->
       </div>
       <div style="display: flex; margin-top:5px;">
         <div class="patent index1">
@@ -72,9 +75,12 @@
     <div>
       <div class="specialist_title">
         <h2>专家介绍</h2>
-        <router-link :to="{ 'name': 'expertSearch'}" style="right: 0;width: 90px;">
+        <div style="right: 0;width: 90px;">
+          <a href="/#/expertSearch" style="right: 0;width: 82px;top: 0;" target="_blank">更多专家</a>
+        </div>
+        <!-- <router-link :to="{ 'name': 'expertSearch' }" style="right: 0;width: 90px;">
           <a href="#" style="right: 0;width: 82px;top: 0;">更多专家</a>
-        </router-link>
+        </router-link> -->
       </div>
       <div class="specialist clearfix">
         <div style="display: flex;" class="specialist_container">
