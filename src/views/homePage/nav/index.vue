@@ -1,13 +1,12 @@
 <template>
   <!-- 导航开始 -->
-  <div>
-    <div class="bigCarousel" style="position: relative; margin: auto">
+  <div style="position:relative;">
+    <!-- <div class="bigCarousel" style="position: relative; margin: auto">
       <div class="bigTitle">
         <div class="TopTitle">知识产权对接平台</div>
         <div class="Nav">
           <ul style="display: flex">
             <li class="head_item"><a href="#">首页</a></li>
-            <!-- <li class="head_item"><a href="#">平台服务</a></li> -->
             <li class="head_item"><a href="#">通知公告</a></li>
             <li class="head_item"><a href="#">动态资讯</a></li>
             <li class="head_item"><a href="#">专利导航</a></li>
@@ -29,23 +28,22 @@
                 {{ item.content1 }}
                 <br>
                 {{ item.content2 }}
-                <!-- 数据流动、数据分析与数据存储将不可阻挡的形成跨域趋势<br />
-                TEMPLATE致力于打造基于EOS互联网3.0数据与应用 -->
               </div>
             </div>
           </div>
-          <!--          <div class="img"></div>-->
           <div class="img" :style="'width: 100%;height: 100%;' + 'background-image:url(' + item.imgUrl + ')'">
-            <!--            <img :src="item.imgUrl" alt="暂无图片" style="display: block;width: 100%; height: 100%;margin:0 auto;" />-->
           </div>
         </el-carousel-item>
       </el-carousel>
-    </div>
+    </div> -->
+    
+    <Earth></Earth>
   </div>
 </template>
 
 <script>
 import "@/assets/css/base.css";
+import Earth from '@/components/Earth'
 export default {
   name: "navPage",
   data() {
@@ -88,6 +86,9 @@ export default {
       this.bannerHeight = (600 / 1550) * this.screenWidth;
     };
   },
+  components: {
+    Earth
+  }
 };
 </script>
 
@@ -107,9 +108,9 @@ export default {
 .TopTitle {
   position: absolute;
   top: 60px;
-  left: 0;
+  left: 30px;
   /*z-index: 10;*/
-  color: #02b2b5;
+  color: #fff;
   font-weight: bold;
   font-size: 2rem;
 }
@@ -158,7 +159,8 @@ img {
 .Nav a {
   color: white;
 }
-.Nav ul{
+
+.Nav ul {
   height: 42px;
 }
 

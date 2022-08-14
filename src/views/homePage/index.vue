@@ -1,12 +1,14 @@
 <template>
   <div class="head clearfix">
     <!-- <Top></Top> -->
+
     <Nav></Nav>
     <News></News>
     <Main></Main>
     <Demand></Demand>
     <Policies></Policies>
-<!--    <Footer></Footer>-->
+
+    <!--    <Footer></Footer>-->
   </div>
 </template>
 
@@ -20,10 +22,9 @@ import Footer from '@/views/homePage/footer'
 import Demand from '@/views/homePage/demand'
 export default {
   name: 'HomePage',
-  components: { Top, Nav, News, Main, Footer, Policies, Demand }
+  components: { Top, Nav, News, Main, Footer, Policies, Demand}
 }
 </script>
 
 <style scoped>
-
 </style>
