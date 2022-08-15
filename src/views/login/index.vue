@@ -15,15 +15,13 @@
 
 
   <div class="dowebok" id="dowebok" style="margin: 15vh auto;" :class="{ 'right-panel-active': type === 'register' }">
+    <!-- 注册页 -->
     <div class="form-container sign-up-container">
-      <form action="user/addUser">
+      <form>
         <h1>注册</h1>
-
         <span>请输入您的信息</span>
-        <input type="text" id="idcard" name="idcard" placeholder="身份证号" onblur="validate_idcard(this.value)">
-
+        <input type="text" id="idcard" name="idcard" placeholder="手机号码" onblur="validate_idcard(this.value)">
         <input type="text" id="Username" name="username" placeholder="姓名" onblur="validate_username(this.value)">
-
         <input type="password" id="Password" name="password" placeholder="以字母开头只能包含字母、数字和下划线"
           onblur="validate_password(this.value)">
         <input type="password" id="Password2" name="password2" onblur="validate_password2(this.value)"
@@ -31,18 +29,19 @@
         <button @click="registerConfirm">注册</button>
       </form>
     </div>
+    <!-- 登录页 -->
     <div class="form-container sign-in-container">
-      <form action="house/mainHouse">
+      <form>
         <h1>登录</h1>
-
         <span>或使用您的帐号</span>
-        <input type="text" placeholder="身份证号">
-        <input type="text" placeholder="姓名">
-        <input type="password" placeholder="密码">
+        <!-- <input type="text" placeholder="身份证号"> -->
+        <input type="text" placeholder="用户名" v-model="enrollInfo.username">
+        <input type="password" placeholder="密码" v-model="enrollInfo.key">
         <a href="###">忘记密码？</a>
         <button @click="logConfirm">登录</button>
       </form>
     </div>
+    <!-- 切换页 -->
     <div class="overlay-container">
       <div class="overlay">
         <div class="overlay-panel overlay-left">
@@ -63,6 +62,8 @@
 
 <script>
 import { validate_idcard, validate_username, validate_password, validate_password2 } from './index'
+import { login } from '@/api/login'
+
 let signUpButton;
 let signInButton;
 let container;
@@ -82,26 +83,32 @@ let type;
 
 export default {
   name: 'login',
-  methods: {
-    logConfirm() {
-      console.log('log confirm');
-    },
-    registerConfirm() {
-      console.log('register confirm');
-    }
-  },
   data() {
     return {
       enrollInfo: {
-        account: '',
+        username: '',
         key: '',
       },
-      type
+      type,
+      token: {}
     }
   },
+  methods: {
+    logConfirm() {
+
+    },
+    registerConfirm() {
+      console.log('register confirm');
+      validate_idcard();
+      validate_username();
+      validate_password();
+      validate_password2();
+      return;
+    }
+  },
+
   created() {
     this.type = this.$route.query.type;
-    console.log(this.type);
   }
 };
 </script>

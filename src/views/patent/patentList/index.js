@@ -1,7 +1,7 @@
 import '@/assets/css/base.css'
 import Pagination from '@/components/Pagination'
 import { patentList } from '@/api/patent'
-
+import Top from '@/components/Top/index.vue'
 const defaultListQuery = {
   page: 1,
   limit: 10
@@ -9,20 +9,20 @@ const defaultListQuery = {
 
 export default {
   name: 'patentList',
-  components: { Pagination },
-  data () {
+  components: { Pagination, Top },
+  data() {
     return {
       listQuery: Object.assign({}, defaultListQuery),
       total: 0,
       tableData: []
     }
   },
-  created () {
+  created() {
     this.getList()
   },
   methods: {
 
-    getList () {
+    getList() {
       patentList(this.listQuery).then(res => {
         this.tableData = res.results
         this.total = res.count
@@ -30,7 +30,7 @@ export default {
     },
 
     // 前往学生成绩趋势
-    toPatentDetail (id) {
+    toPatentDetail(id) {
       this.$router.push({
         name: 'patentDetail',
         query: { patent: id }

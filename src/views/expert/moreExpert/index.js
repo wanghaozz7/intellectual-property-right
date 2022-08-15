@@ -1,4 +1,4 @@
-import Top from '@/views/expert/components/top/index.vue'
+import Top from '@/components/Top/index.vue'
 export default {
   name: 'MoreExpert',
   components:{

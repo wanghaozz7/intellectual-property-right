@@ -185,7 +185,7 @@ const demand = [[
   date: '2022-06-16 14:22',
   progress: '专家相应需求'
 }]]
-import top from '@/views/expert/components/top/index.vue'
+import top from '@/components/Top/index.vue'
 export default {
   name: 'index',
   data() {
@@ -204,8 +204,6 @@ export default {
     },
     idx_change(key) {
       this.selected_idx = key;
-      console.log(this.selected_idx);
-
     }
   },
   components: {

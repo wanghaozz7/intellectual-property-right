@@ -7,7 +7,7 @@
         </div>
       </router-link>
       <div class="search" v-if="sign" style="margin-left: 440px;">
-        <el-input style="width: 480px;" v-model="input"></el-input>
+        <el-input style="width: 480px;" v-model="input" :placeholder="holder"></el-input>
         <el-button style="background-color: #2489f2;color:#fff; margin-left:10px;" slot="append" icon="el-icon-search">
         </el-button>
       </div>

@@ -1,20 +1,6 @@
 <template>
   <div style="background-color: white;">
-    <div class="contain">
-      <div class="content">
-        <router-link to="/patentList">
-          <div class="title">
-            <span style="width: 160px;">知识产权服务平台</span>
-          </div>
-        </router-link>
-        <div class="search" style="margin-left: 440px;">
-          <el-input style="width: 480px;" v-model="input" placeholder="输入专利关键词"></el-input>
-          <el-button style="background-color: #2489f2;color:#fff; margin-left:10px;" slot="append"
-            icon="el-icon-search"></el-button>
-        </div>
-      </div>
-    </div>
-
+    <Top :sign=true holder="输入专利关键词"></Top>
     <div style="margin: 20px auto;width: 1226px;">
       <el-table :data="tableData" style="width:1226px;" :show-header="false" highlight-current-row border>
         <el-table-column width="1225">

@@ -59,9 +59,24 @@ const routes = [
     component: () => import('@/views/login/index.vue')
   },
   {
-    path:'/register',
-    name:'register',
+    path: '/register',
+    name: 'register',
     component: () => import('@/views/login/index.vue')
+  },
+  {
+    path: '/noticeDetail',
+    name: 'noticeDetail',
+    component: () => import('@/views/news/noticeDetail')
+  },
+  {
+    path: '/newsDetail',
+    name: 'newsDetail',
+    component: () => import('@/views/news/newsDetail')
+  },
+  {
+    path: '/policiesDetail',
+    name: 'policiesDetail',
+    component: () => import('@/views/policiesDetail')
   }
 ]
 

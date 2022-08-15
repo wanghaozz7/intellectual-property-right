@@ -1,6 +1,6 @@
 import '@/assets/css/base.css'
 import '@/assets/expertDetail_css/index.css'
-import Top from '@/views/expert/components/top/index.vue'
+import Top from '@/components/Top/index.vue'
 import { talentDetail, talentCoAuthor, talentSameDomains, talentItems, talentSameOrganization } from '@/api/talent'
 
 export default {
@@ -23,8 +23,8 @@ export default {
       color_card: ['', 'success', 'info', 'warning', 'danger'],
       domains_tag: [],
       domains_color: [],
-      orgs_tag:[],
-      orgs_color:[]
+      orgs_tag: [],
+      orgs_color: []
     }
   },
   created() {

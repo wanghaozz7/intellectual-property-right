@@ -1,6 +1,9 @@
 <template>
   <div style="width: 600px;float: left;height: 600px;">
-    <h3 style="margin-top: 13px;">{{ title }}</h3>
+    <div style="margin-top: 13px;font-size: 18px;font-weight: 800;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+      <span>{{ title }}</span>
+      <a :href=link style="color:rgb(89, 87, 87);margin-left: 490px;" target="_blank">更多</a>
+    </div>
     <el-divider></el-divider>
     <ul>
       <li v-for="item in items"
@@ -24,6 +27,7 @@ export default {
       }
     },
     title: '',
+    link:''
   }
 };
 </script>

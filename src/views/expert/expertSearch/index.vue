@@ -1,6 +1,6 @@
 <template>
   <div>
-    <top :sign="true"></top>
+    <top :sign="true" holder="搜索专家"></top>
     <div class="container">
       <div class="search-Range">
         <div class="search-Range-title">

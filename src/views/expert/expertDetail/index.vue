@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Top :sign="true"></Top>
+    <Top :sign="true" holder="专家详情"></Top>
     <div class="content">
       <!-- 专家信息-->
       <div class="person-detail white-box-big back-white flex">

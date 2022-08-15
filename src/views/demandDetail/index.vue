@@ -1,8 +1,7 @@
 <template>
   <div>
-
     <!-- 顶部 -->
-    <top sign="true"></top>
+    <top sign="true" holder="输入需求关键词"></top>
     <!-- 内容 -->
     <div style="width: 1226px;margin: 20px auto;height: auto;">
       <el-container style="width: 100%;height: 100%;">
@@ -62,7 +61,6 @@
         </el-form>
       </el-dialog>
     </div>
-
   </div>
 </template>
 
@@ -96,9 +94,13 @@
 }
 
 .show_card :hover {
-  transition: all .8s;
+  transition: all .5s;
   background-color: #01847f;
   color: #f9d3e3;
+}
+
+.show_card p:hover {
+  cursor: default;
 }
 
 /* 修改menu默认悬浮和激活样式 */

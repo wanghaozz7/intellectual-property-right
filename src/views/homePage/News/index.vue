@@ -13,11 +13,15 @@
       <!-- 新闻部分 -->
       <!-- 通知公告  -->
       <div class="notice">
-        <div class="title">通知公告</div>
+        <div class="title">
+          <span>通知公告</span>
+          <a href="/#/noticeDetail" style="color:rgb(89, 87, 87);margin-left: 390px;" target="_blank">更多</a>
+        </div>
         <div class="content">
           <ul v-for="item, index in notifyList" :key="index">
             <li>
-              <router-link :to="{'name': 'articleDetail', 'query': {'type': 'notify', 'id': item.id}}" target="_blank">
+              <router-link :to="{ 'name': 'articleDetail', 'query': { 'type': 'notify', 'id': item.id } }"
+                target="_blank">
                 <a> {{ item.title }} </a>
               </router-link>
             </li>
@@ -29,7 +33,8 @@
     <div class="right">
       <div class="information">
         <div class="title">
-          动态资讯
+          <span>动态资讯</span>
+          <a href="/#/newsDetail" style="color:rgb(89, 87, 87);margin-left: 390px;" target="_blank">更多</a>
         </div>
         <div class="content">
           <ul>
@@ -37,11 +42,13 @@
               <a href="">
                 <div>
                   <div class="img">
-                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg69fvkQYotJv6ygUwwgM4_gE.jpg.webp" alt="">
+                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg69fvkQYotJv6ygUwwgM4_gE.jpg.webp"
+                      alt="">
                   </div>
                   <div class="itemInformation">
                     <div class="itemTitle">啊啊啊</div>
-                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
+                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd
+                      fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
                   </div>
                 </div>
               </a>
@@ -51,11 +58,13 @@
               <a href="">
                 <div>
                   <div class="img">
-                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg-bbvkQYosJ2X-QIwggM46wE.jpg.webp" alt="">
+                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg-bbvkQYosJ2X-QIwggM46wE.jpg.webp"
+                      alt="">
                   </div>
                   <div class="itemInformation">
                     <div class="itemTitle">啊啊啊</div>
-                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
+                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd
+                      fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
                   </div>
                 </div>
               </a>
@@ -65,11 +74,13 @@
               <a href="">
                 <div>
                   <div class="img">
-                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg69fvkQYotJv6ygUwwgM4_gE.jpg.webp" alt="">
+                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg69fvkQYotJv6ygUwwgM4_gE.jpg.webp"
+                      alt="">
                   </div>
                   <div class="itemInformation">
                     <div class="itemTitle">啊啊啊</div>
-                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
+                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd
+                      fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
                   </div>
                 </div>
               </a>
@@ -79,11 +90,13 @@
               <a href="">
                 <div>
                   <div class="img">
-                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg-bbvkQYosJ2X-QIwggM46wE.jpg.webp" alt="">
+                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg-bbvkQYosJ2X-QIwggM46wE.jpg.webp"
+                      alt="">
                   </div>
                   <div class="itemInformation">
                     <div class="itemTitle">啊啊啊</div>
-                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
+                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd
+                      fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
                   </div>
                 </div>
               </a>
@@ -93,11 +106,13 @@
               <a href="">
                 <div>
                   <div class="img">
-                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg69fvkQYotJv6ygUwwgM4_gE.jpg.webp" alt="">
+                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg69fvkQYotJv6ygUwwgM4_gE.jpg.webp"
+                      alt="">
                   </div>
                   <div class="itemInformation">
                     <div class="itemTitle">啊啊啊</div>
-                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
+                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd
+                      fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
                   </div>
                 </div>
               </a>
@@ -107,11 +122,13 @@
               <a href="">
                 <div>
                   <div class="img">
-                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg69fvkQYotJv6ygUwwgM4_gE.jpg.webp" alt="">
+                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg69fvkQYotJv6ygUwwgM4_gE.jpg.webp"
+                      alt="">
                   </div>
                   <div class="itemInformation">
                     <div class="itemTitle">啊啊啊</div>
-                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
+                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd
+                      fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
                   </div>
                 </div>
               </a>
@@ -138,7 +155,7 @@ const imgUrlList = [
 ]
 export default {
   name: 'NewsPage',
-  data () {
+  data() {
     return {
       imgUrlList: imgUrlList,
       notifyList: [
@@ -161,21 +178,23 @@ export default {
 </script>
 
 <style scoped>
-.carousel{
+.carousel {
   width: 606px;
   height: 431px;
   border: 1px solid #ffffff;
   border-radius: 10px;
-  transition:all .3s;
+  transition: all .3s;
   background-color: #fff;
   margin-bottom: 14px;
 }
-.carousel:hover{
+
+.carousel:hover {
   border: 1px solid #b7b4b4;
-  transition:all .3s;
-  transform:scale(1.01);
+  transition: all .3s;
+  transform: scale(1.01);
 }
-.news{
+
+.news {
   display: flex;
   height: 955px;
   width: 1226px;
@@ -185,87 +204,102 @@ export default {
   /*background: #ffffff;*/
   border-radius: 20px;
 }
-.title{
+
+.title {
   font-size: 24px;
   margin-bottom: 20px;
   font-weight: bold;
   padding-bottom: 10px;
   color: rgb(89, 87, 87);
 }
+
 /*左边*/
 /*通知公告*/
-.notice{
+.notice {
   width: 606px;
   height: 504px;
   background: #ffffff;
   border-radius: 10px;
   padding: 20px 30px;
   border: 1px solid #ffffff;
-  transition:all .3s;
+  transition: all .3s;
 }
-.notice:hover{
+
+.notice:hover {
   border: 1px solid #b7b4b4;
-  transition:all .3s;
-  transform:scale(1.01);
+  transition: all .3s;
+  transform: scale(1.01);
 }
-.notice ul li a{
+
+.notice ul li a {
   color: #4a4a4a;
   font-size: 18px;
 }
-.notice ul li{
+
+.notice ul li {
   margin: 10px 0;
 }
-.notice ul li:hover{
+
+.notice ul li:hover {
   color: #424141;
   font-weight: bold;
 }
+
 /* 右边 */
-.right{
+.right {
   margin-left: 14px;
 }
+
 /* 动态资讯 */
-.information{
+.information {
   width: 606px;
   height: 950px;
   background: #ffffff;
   border-radius: 10px;
   padding: 20px 30px;
   border: 1px solid #ffffff;
-  transition:all .3s;
+  transition: all .3s;
 }
-.information:hover{
+
+.information:hover {
   border: 1px solid #b7b4b4;
   /*box-shadow: 0 0 3px #858585, 0 0 5px #e3e3e3;*/
-  transition:all .3s;
-  transform:scale(1.01);
+  transition: all .3s;
+  transform: scale(1.01);
 }
-.content ul li a>div{
+
+.content ul li a>div {
   display: flex;
   width: 551px;
   height: 103px;
 }
 
-.itemInformation{
+.itemInformation {
   width: 370px;
   margin-left: 20px;
 }
-.line{
+
+.line {
   border-top: 1px solid #F0F0F0;
   margin: 23.5px 0;
 }
-.itemTitle{
+
+.itemTitle {
   overflow: hidden;
 }
-.itemContent{
+
+.itemContent {
   margin-top: 10px;
   font-size: 14px;
   overflow: hidden;
   color: rgb(144, 147, 149);
 }
-.img{
+
+.img {
   width: 163px;
 }
-.img img{
+
+.img img {
   width: 100%;
 }
 </style>
