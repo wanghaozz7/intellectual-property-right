@@ -53,6 +53,16 @@ const routes = [
     name: 'patentList',
     component: () => import('@/views/patent/patentList/index.vue')
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/login/index.vue')
+  },
+  {
+    path:'/register',
+    name:'register',
+    component: () => import('@/views/login/index.vue')
+  }
 ]
 
 const router = new VueRouter({

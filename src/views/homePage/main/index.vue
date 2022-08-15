@@ -23,7 +23,7 @@
               <p>{{ item.title }}</p>
               <div class="littleFun ">
                 <router-link :to="{ 'name': 'patentDetail', 'query': { 'patent': item.id } }" target="_blank">
-                  <a>查看详情</a>
+                  查看详情
                 </router-link>
               </div>
             </div>

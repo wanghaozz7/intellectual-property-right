@@ -42,8 +42,13 @@
         <div class="nav_blocks">
           <ul style="display: flex;">
             <li v-for="item in blocks">{{ item }}</li>
-            <li style="margin-left: 50px;">登录</li>
-            <li>注册</li>
+            <li style="margin-right: 50px;"></li>
+            <router-link :to="{ 'name': 'login', 'query': { 'type': 'login' } }" target="_blank">
+              <li style="color: white;">登录</li>
+            </router-link>
+            <router-link :to="{ 'name': 'login', 'query': { 'type': 'register' } }" target="_blank">
+              <li style="color: white;">注册</li>
+            </router-link>
           </ul>
         </div>
       </div>
@@ -55,8 +60,18 @@
         </div>
       </div>
     </div>
-
     <Earth></Earth>
+    <!-- 登录 -->
+    <!-- <el-dialog :visible.sync="enrollVisible">
+      <el-form :model="enrollInfo" label-position="left" label-width="50px">
+        <el-form-item label="账号">
+          <el-input></el-input>
+        </el-form-item>
+        <el-form-item label="密码">
+          <el-input></el-input>
+        </el-form-item>
+      </el-form>
+    </el-dialog> -->
   </div>
 </template>
 
@@ -91,7 +106,7 @@ export default {
       //     content2: 'TEMPLATE致力于打造基于EOS互联网3.0数据与应用2'
       //   },
       // ],
-      blocks: ['首页', '通知公告', '动态资讯', '专利导航', '领域专家', '企业需求', '政策法规']
+      blocks: ['首页', '通知公告', '动态资讯', '专利导航', '领域专家', '企业需求', '政策法规'],
     };
   },
   // 解决轮播图的高度自适应
