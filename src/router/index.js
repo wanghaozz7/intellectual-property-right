@@ -74,9 +74,14 @@ const routes = [
     component: () => import('@/views/news/newsDetail')
   },
   {
-    path: '/policiesDetail',
-    name: 'policiesDetail',
-    component: () => import('@/views/policiesDetail')
+    path: '/policiesDetail/law',
+    name: 'law',
+    component: () => import('@/views/policiesDetail/law')
+  },
+  {
+    path: '/policiesDetail/case',
+    name: 'case',
+    component: () => import('@/views/policiesDetail/case')
   }
 ]
 

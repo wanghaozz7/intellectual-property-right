@@ -1,7 +1,7 @@
 <template>
   <div style="background-color: #fff;">
     <Top :sign=true holder="输入资讯关键词"></Top>
-    <ArticleList :items=items :total=total :page=page :limit=limit :sizes=sizes title="保护案例"></ArticleList>
+    <ArticleList :items=items :total=total :page=page :limit=limit :sizes=sizes title="通知公告"></ArticleList>
   </div>
 </template>
 
@@ -82,11 +82,6 @@ export default {
       page: 1,
       limit: 10,
       sizes: [10, 15, 20, 25, 30]
-    }
-  },
-  methods: {
-    getList() {
-
     }
   }
 };</script>

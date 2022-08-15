@@ -6,7 +6,7 @@
     <ul>
       <li v-for="item in items"
         style="justify-content: space-between;flex: 1;display: flex;align-items: center;margin-bottom: 20px;">
-        <span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 500px;"><a href="#">
+        <span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 1100px;"><a href="#">
             {{ item.title }}</a></span>
         <span>{{ item.date }}</span>
       </li>
