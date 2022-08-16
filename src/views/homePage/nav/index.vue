@@ -78,6 +78,8 @@
 <script>
 import "@/assets/css/base.css";
 import Earth from '@/components/Earth'
+import store from '@/store/index'
+let isLoged = store.state.isLoged;
 export default {
   name: "navPage",
   data() {
@@ -107,6 +109,7 @@ export default {
       //   },
       // ],
       blocks: ['首页', '通知公告', '动态资讯', '专利导航', '领域专家', '企业需求', '政策法规'],
+      isLoged
     };
   },
   // 解决轮播图的高度自适应

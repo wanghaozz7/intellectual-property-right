@@ -22,37 +22,46 @@
         <el-descriptions-item label="预算上线">未确定</el-descriptions-item>
       </el-descriptions>
       <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
-        :contentStyle="{ 'text-align': 'center' }">
+        :contentStyle="{ 'text-align': 'left' }">
         <el-descriptions-item label="附件"></el-descriptions-item>
       </el-descriptions>
       <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
-        :contentStyle="{ 'text-align': 'center' }">
+        :contentStyle="{ 'text-align': 'left' }">
         <el-descriptions-item label="需求详情">
           企业研究过程遇到的难点是：(1)PET吸水，从而导致物性不稳定；(2)PET 不容易做到阻燃；(3)PET 尺寸不稳定。 希望找到专家或研究院所，能够解决难点。占位占位占位占位占位占位占位占位占位
         </el-descriptions-item>
       </el-descriptions>
       <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
-        :contentStyle="{ 'text-align': 'center' }">
+        :contentStyle="{ 'text-align': 'left' }">
         <el-descriptions-item label="技术指标">
           尚未填写
         </el-descriptions-item>
       </el-descriptions>
       <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
-        :contentStyle="{ 'text-align': 'center' }">
+        :contentStyle="{ 'text-align': 'left' }">
         <el-descriptions-item label="不感兴趣的技术">
           尚未填写
         </el-descriptions-item>
       </el-descriptions>
-      <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
+      <!-- <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'height': '200px' }"
         :contentStyle="{ 'text-align': 'center' }">
-        <el-descriptions-item label="处理进度">
-          <el-steps :active="1" simple>
-            <el-step title="步骤 1" icon="el-icon-edit"></el-step>
-            <el-step title="步骤 2" icon="el-icon-upload"></el-step>
-            <el-step title="步骤 3" icon="el-icon-picture"></el-step>
-          </el-steps>
+        <el-descriptions-item label="处理进度" align-center space="100">
+          <div>
+            <el-steps :space="200" :active="1" finish-status="success">
+              <el-step title="已完成"></el-step>
+              <el-step title="进行中"></el-step>
+              <el-step title="步骤 3"></el-step>
+            </el-steps>
+          </div>
         </el-descriptions-item>
-      </el-descriptions>
+      </el-descriptions> -->
+      <el-steps :active="1" style="margin-top:20px" align-center>
+        <el-step title="提交需求" icon="el-icon-document"></el-step>
+        <el-step title="需求确认" icon="el-icon-document-checked"></el-step>
+        <el-step title="需求预约" icon="el-icon-date"></el-step>
+        <el-step title="需求服务" icon="el-icon-goods"></el-step>
+        <el-step title="需求关闭" icon="el-icon-circle-check"></el-step>
+      </el-steps>
     </el-card>
   </div>
 </template>

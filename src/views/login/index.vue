@@ -26,7 +26,7 @@
           onblur="validate_password(this.value)">
         <input type="password" id="Password2" name="password2" onblur="validate_password2(this.value)"
           placeholder="确认密码">
-        <button @click="registerConfirm">注册</button>
+        <button @click="registerConfirm" type="button">注册</button>
       </form>
     </div>
     <!-- 登录页 -->
@@ -38,7 +38,7 @@
         <input type="text" placeholder="用户名" v-model="enrollInfo.username">
         <input type="password" placeholder="密码" v-model="enrollInfo.key">
         <a href="###">忘记密码？</a>
-        <button @click="logConfirm">登录</button>
+        <button @click="logConfirm" type="button">登录</button>
       </form>
     </div>
     <!-- 切换页 -->
@@ -63,7 +63,8 @@
 <script>
 import { validate_idcard, validate_username, validate_password, validate_password2 } from './index'
 import { login } from '@/api/login'
-
+import store from '@/store/index'
+import router from '@/router/index'
 let signUpButton;
 let signInButton;
 let container;
@@ -90,11 +91,33 @@ export default {
         key: '',
       },
       type,
-      token: {}
+      token: ''
     }
   },
   methods: {
     logConfirm() {
+      let data = {
+        username: this.enrollInfo.username,
+        password: this.enrollInfo.key
+      }
+      login(data).then(res => {
+        this.token = res.data.response_data.token;
+        let isLoged = store.state.isLoged;
+        store.commit('login');
+        this.$message({
+          message: '登录成功！',
+          type: 'success'
+        });
+        window.setTimeout(function () {
+          router.push({ name: 'homePage' });
+        }, 1000);
+        window.setTimeout(function () {
+          console.log(isLoged);
+        }, 1000);
+      }).catch(err => {
+        console.log(err);
+        this.$message.error('登录失败！');
+      })
 
     },
     registerConfirm() {
@@ -109,6 +132,13 @@ export default {
 
   created() {
     this.type = this.$route.query.type;
+    // let data = {
+    //   username: '13124981760',
+    //   password: '345'
+    // }
+    // login(data).then(res => {
+    //   console.log(res);
+    // })
   }
 };
 </script>
