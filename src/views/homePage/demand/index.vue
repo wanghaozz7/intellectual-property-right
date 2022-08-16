@@ -4,7 +4,7 @@
       <div style="display: flex">
         <h2>企业最新需求</h2>
         <p>
-          <a href="/#/demandDetail" style="color: #196aa9" target="_blank">更多需求</a>
+          <a href="/#/demandList" style="color: #196aa9" target="_blank">更多需求</a>
         </p>
       </div>
     </div>
@@ -130,7 +130,7 @@
 <script>
 import "@/assets/css/base.css"
 export default {
-  name: 'index'
+  name: ''
 }
 </script>
 <style scoped>

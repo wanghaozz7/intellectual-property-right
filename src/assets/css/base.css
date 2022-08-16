@@ -24,9 +24,6 @@ a:active {
   color: #000000;
 }
 
-span:hover {
-  cursor: default;
-}
 
 body {
   background: #f6f6f6;

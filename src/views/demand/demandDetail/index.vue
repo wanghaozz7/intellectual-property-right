@@ -1,0 +1,112 @@
+<template>
+  <div>
+    <Top :sign=true holder="需求详情"></Top>
+    <el-card class="box-card">
+      <div slot="header" class="header">
+        <span style="font-size: 20px;">
+          <el-tag>{{ field[field_idx] }}</el-tag> 寻求提升PET物性稳定性、阻燃性、尺寸稳定性的方法
+        </span>
+        <span>
+          <el-button type="danger" size="small">我感兴趣</el-button>
+        </span>
+      </div>
+
+      <el-descriptions class="margin-top" :column="5" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
+        :contentStyle="{ 'text-align': 'center' }">
+        <template slot="title">山东某新材料有限公司</template>
+        <template slot="extra">2022-05-27 10:14</template>
+        <el-descriptions-item label="关键词">PET PET 阻燃 阻燃</el-descriptions-item>
+        <el-descriptions-item label="客户类型">企业</el-descriptions-item>
+        <el-descriptions-item label="解决期限">未确认</el-descriptions-item>
+        <el-descriptions-item label="最佳预算">未确定</el-descriptions-item>
+        <el-descriptions-item label="预算上线">未确定</el-descriptions-item>
+      </el-descriptions>
+      <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
+        :contentStyle="{ 'text-align': 'center' }">
+        <el-descriptions-item label="附件"></el-descriptions-item>
+      </el-descriptions>
+      <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
+        :contentStyle="{ 'text-align': 'center' }">
+        <el-descriptions-item label="需求详情">
+          企业研究过程遇到的难点是：(1)PET吸水，从而导致物性不稳定；(2)PET 不容易做到阻燃；(3)PET 尺寸不稳定。 希望找到专家或研究院所，能够解决难点。占位占位占位占位占位占位占位占位占位
+        </el-descriptions-item>
+      </el-descriptions>
+      <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
+        :contentStyle="{ 'text-align': 'center' }">
+        <el-descriptions-item label="技术指标">
+          尚未填写
+        </el-descriptions-item>
+      </el-descriptions>
+      <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
+        :contentStyle="{ 'text-align': 'center' }">
+        <el-descriptions-item label="不感兴趣的技术">
+          尚未填写
+        </el-descriptions-item>
+      </el-descriptions>
+      <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
+        :contentStyle="{ 'text-align': 'center' }">
+        <el-descriptions-item label="处理进度">
+          <el-steps :active="1" simple>
+            <el-step title="步骤 1" icon="el-icon-edit"></el-step>
+            <el-step title="步骤 2" icon="el-icon-upload"></el-step>
+            <el-step title="步骤 3" icon="el-icon-picture"></el-step>
+          </el-steps>
+        </el-descriptions-item>
+      </el-descriptions>
+    </el-card>
+  </div>
+</template>
+
+<script>
+import Top from '@/components/Top/index.vue'
+
+const field = ['节能环保', '生物医药', '机械制造', '电子信息', '化工化学', '新能源', '材料科学', '其他'];
+
+
+export default {
+  name: '',
+  components: {
+    Top
+  },
+  data() {
+    return {
+      field,
+      field_idx: -1,
+      demand_list: {
+
+      }
+    }
+  },
+  created() {
+    this.field_idx = this.$route.query.id;
+    console.log(this.field_idx);
+  }
+};
+</script>
+
+<style scoped>
+/* 卡片 */
+.box-card {
+  width: 1226px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* 头部 */
+.header {
+  justify-content: space-between;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* .clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both
+} */
+</style>

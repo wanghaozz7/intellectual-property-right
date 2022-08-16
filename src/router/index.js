@@ -19,11 +19,17 @@ const routes = [
     // component: () => import('@/views/detail/patentDetail/index.vue')
     component: () => import('@/views/patent/patentDetail/index.vue')
   },
-  // 需求提交页
+  // 需求展示页
+  {
+    path: '/demandList',
+    name: 'demandList',
+    component: () => import('@/views/demand/demandList/index.vue')
+  },
+  // 需求详情页
   {
     path: '/demandDetail',
     name: 'demandDetail',
-    component: () => import('@/views/demandDetail/index.vue')
+    component: () => import('@/views/demand/demandDetail/index.vue')
   },
   // 更多专家
   {
