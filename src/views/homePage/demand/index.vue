@@ -9,8 +9,26 @@
       </div>
     </div>
     <div class="content">
-      <div class="contentBlock">
-        <a href="">
+      <div class="contentBlock" v-for="block of content">
+        <a href="" v-for="item of block">
+          <div class="item">
+            <div class="date">
+              <h1>{{ item.date[2] }}</h1>
+            </div>
+            <div class="time">
+              <span>{{ item.date[1] }}</span>
+              <span>·</span>
+              <span>{{ item.date[0] }}</span>
+            </div>
+            <div class="itemContent">
+              <span>{{ item.title }}</span>
+              <div class="textContent">
+                {{ item.demand }}
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- <a href="">
           <div class="item">
             <div class="date">
               <h1>1</h1>
@@ -27,27 +45,9 @@
               </div>
             </div>
           </div>
-        </a>
-        <a href="">
-          <div class="item">
-            <div class="date">
-              <h1>1</h1>
-            </div>
-            <div class="time">
-              <span>Apr</span>
-              <span>·</span>
-              <span>2022</span>
-            </div>
-            <div class="itemContent">
-              <span>寻找节能环保建筑材料、绿色建筑等新成果</span>
-              <div class="textContent">
-                寻找节能环保建筑材料、绿色建筑等新成果，以现有河北地区工厂企业为依托，与成果持有专家团队共同推动成果应用到产业和运营工作，可考虑技术入股、长期聘用专家指导等方式合作。
-              </div>
-            </div>
-          </div>
-        </a>
+        </a> -->
       </div>
-      <div class="contentBlock">
+      <!-- <div class="contentBlock">
         <a href="">
           <div class="item">
             <div class="date">
@@ -84,8 +84,8 @@
             </div>
           </div>
         </a>
-      </div>
-      <div class="contentBlock">
+      </div> -->
+      <!-- <div class="contentBlock">
         <a href="">
           <div class="item">
             <div class="date">
@@ -122,15 +122,47 @@
             </div>
           </div>
         </a>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
 import "@/assets/css/base.css"
+import { demandList } from '@/api/demand'
 export default {
-  name: ''
+  name: '',
+  data() {
+    return {
+      content: [[], [], []]
+    }
+  },
+  created() {
+    const query = {
+      limit: 3,
+      page: 1
+    }
+    demandList(query).then(res => {
+      const tmp = res.results;
+      console.log(tmp);
+      for (let idx in tmp) {//分为三组
+        let i = idx / 2;
+        const source = tmp[idx];
+        const date = source.publish_date.split('-');
+        const title = source.title;
+        const demand = source.demand_content;
+        console.log(date, title, demand);
+        const data = {
+          date,
+          title,
+          demand
+        }
+        this.content[i].push(data);
+      }
+    }).catch(err => {
+      console.log(err);
+    });
+  }
 }
 </script>
 <style scoped>

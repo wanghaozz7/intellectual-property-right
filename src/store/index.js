@@ -1,22 +1,47 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { getToken, setToken, removeToken } from '@/utils/auth'
+import { login } from '@/api/user'
 
 Vue.use(Vuex)
 
+
 export default new Vuex.Store({
   state: {
-    isLoged: false
+    token: '',
+    name: ''
   },
   getters: {
+
   },
   mutations: {
-    login: (state) => {
-      state.isLoged = true;
-      console.log(state.isLoged);
+    SET_TOKEN: (state, token) => {
+      state.token = token;
+      console.log(state.token);
+
+    },
+    SET_NAME: (state, name) => {
+      state.name = name;
+      console.log(state.name);
     }
   },
   actions: {
+    login({ commit }, userInfo) {
+      const { username, password } = userInfo
+      return new Promise((resolve, reject) => {
+        login({ username: username.trim(), password: password }).then(response => {
+          const { name, response_data } = response.data;
+          const token = response_data.token;
+          commit('SET_TOKEN', token)
+          setToken(token)
+          resolve()
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    }
   },
   modules: {
+
   }
 })

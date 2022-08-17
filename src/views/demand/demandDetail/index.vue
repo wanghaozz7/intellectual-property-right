@@ -7,7 +7,7 @@
           <el-tag>{{ field[field_idx] }}</el-tag> 寻求提升PET物性稳定性、阻燃性、尺寸稳定性的方法
         </span>
         <span>
-          <el-button type="danger" size="small">我感兴趣</el-button>
+          <el-button :type=button_type size="small" @click="handleClick">{{ button_text }}</el-button>
         </span>
       </div>
 
@@ -68,7 +68,9 @@
 
 <script>
 import Top from '@/components/Top/index.vue'
-
+import store from '@/store/index'
+import router from '@/router/index'
+import { getToken } from '@/utils/auth';
 const field = ['节能环保', '生物医药', '机械制造', '电子信息', '化工化学', '新能源', '材料科学', '其他'];
 
 
@@ -83,12 +85,27 @@ export default {
       field_idx: -1,
       demand_list: {
 
-      }
+      },
+      button_type: 'danger',
+      button_text: '我感兴趣'
     }
   },
   created() {
     this.field_idx = this.$route.query.id;
     console.log(this.field_idx);
+  },
+  methods: {
+    handleClick() {
+      let token = getToken();
+      console.log(token);
+      if (token === '') {
+        console.log('未登录');
+
+      } else {
+        console.log('已登录');
+
+      }
+    }
   }
 };
 </script>

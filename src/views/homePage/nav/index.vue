@@ -43,12 +43,13 @@
           <ul style="display: flex;">
             <li v-for="item in blocks">{{ item }}</li>
             <li style="margin-right: 50px;"></li>
-            <router-link :to="{ 'name': 'login', 'query': { 'type': 'login' } }" target="_blank">
+            <router-link :to="{ 'name': 'login', 'query': { 'type': 'login' } }" target="_blank" v-if="!isLoged">
               <li style="color: white;">登录</li>
             </router-link>
-            <router-link :to="{ 'name': 'login', 'query': { 'type': 'register' } }" target="_blank">
+            <router-link :to="{ 'name': 'login', 'query': { 'type': 'register' } }" target="_blank" v-if="!isLoged">
               <li style="color: white;">注册</li>
             </router-link>
+            <li v-if="isLoged">欢迎,{{ name }}</li>
           </ul>
         </div>
       </div>
@@ -79,7 +80,9 @@
 import "@/assets/css/base.css";
 import Earth from '@/components/Earth'
 import store from '@/store/index'
-let isLoged = store.state.isLoged;
+let token = store.state.token;
+let isLoged = token !== '';
+let name = store.state.name;
 export default {
   name: "navPage",
   data() {
@@ -109,7 +112,9 @@ export default {
       //   },
       // ],
       blocks: ['首页', '通知公告', '动态资讯', '专利导航', '领域专家', '企业需求', '政策法规'],
-      isLoged
+      isLoged,
+      token,
+      name
     };
   },
   // 解决轮播图的高度自适应
@@ -126,6 +131,12 @@ export default {
   // },
   components: {
     Earth
+  },
+  created() {
+    this.token = store.state.token;
+    this.isLoged = this.token !== '';
+    this.nama = store.state.name;
+    console.log('是否登录', this.isLoged);
   }
 };
 </script>

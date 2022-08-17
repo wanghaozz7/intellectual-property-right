@@ -62,7 +62,8 @@
 
 <script>
 import { validate_idcard, validate_username, validate_password, validate_password2 } from './index'
-import { login } from '@/api/login'
+import { getInfo, login } from '@/api/user'
+import { getToken, setToken } from '@/utils/auth';
 import store from '@/store/index'
 import router from '@/router/index'
 let signUpButton;
@@ -91,33 +92,48 @@ export default {
         key: '',
       },
       type,
-      token: ''
     }
   },
   methods: {
     logConfirm() {
-      let data = {
+      let userInfo = {
         username: this.enrollInfo.username,
         password: this.enrollInfo.key
       }
-      login(data).then(res => {
-        this.token = res.data.response_data.token;
-        let isLoged = store.state.isLoged;
-        store.commit('login');
+
+      // store.dispatch('login', userInfo);
+      // let token = getToken();
+      // console.log(token);
+
+
+      login(userInfo).then(res => {
+        let token = res.data.response_data.token;
+        let name = res.data.name;
+        store.commit('SET_TOKEN', token);
+        store.commit('SET_NAME', name);
         this.$message({
           message: '登录成功！',
           type: 'success'
         });
+        setToken(token);
+
+
+        // 成功提示
         window.setTimeout(function () {
           router.push({ name: 'homePage' });
         }, 1000);
-        window.setTimeout(function () {
-          console.log(isLoged);
-        }, 1000);
       }).catch(err => {
         console.log(err);
+        // 失败提示
         this.$message.error('登录失败！');
       })
+
+
+      // getInfo().then(res => {
+      //   console.log(res);
+      // }).catch(err => {
+      //   console.log(err);
+      // })
 
     },
     registerConfirm() {

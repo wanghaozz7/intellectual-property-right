@@ -39,6 +39,7 @@
 <script>
 import "@/assets/css/base.css"
 import "@/assets/css/footer.css"
+import { law, cases } from '@/api/policy'
 // import "@/assets/js/footer.js"
 import showPolicies from './showPolicies'
 export default {
@@ -138,6 +139,24 @@ export default {
       this.selectIndex = index
       // this.showPolicList =
     }
+  },
+  created() {
+    const query = {
+      limit: 2,
+      page: 1
+    }
+    law(query).then(res => {
+      this.laws = res.results;
+      console.log(this.laws);
+    }).catch(err => {
+      console.log(err);
+    })
+    cases(query).then(res => {
+      this.cases = res.results;
+      console.log(this.laws);
+    }).catch(err => {
+      console.log(err);
+    })
   }
 }
 </script>

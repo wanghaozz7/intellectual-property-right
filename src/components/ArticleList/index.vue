@@ -1,21 +1,25 @@
 <template>
-  <div style="width: 1226px;margin: 20px auto;">
+  <div class="out-side-container">
     <el-container>
-      <el-main style="padding: 0;">
+      <el-main style="padding: 0;min-height: 600px;">
         <div style="margin: 0 0 20px 0;font-size: 20px;">
           {{ title }}
         </div>
         <ul style="float: left;">
-          <li v-for="item in items"
-            style="justify-content: space-between;flex: 1;display: flex;align-items: center;margin-bottom: 20px;width: 850px;">
-            <span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 600px;"><a href="#">
-                {{ item.title }}</a></span>
-            <span>{{ item.date }}</span>
+          <li v-for="item in items" class="list">
+            <span class="list-title">
+              <router-link :to="{ 'name': 'articleDetail', 'query': { 'type': 'notify', 'id': item.id } }"
+                target="_blank">
+                {{ item.title }}
+              </router-link>
+            </span>
+            <span>{{ item.publish_date }}</span>
           </li>
         </ul>
       </el-main>
       <el-aside width="350px" style="padding: 0;background-color: #fff;">
-        <AsideList :listItems="list1.items" :title="list1.title" :link="list1.link" style="margin-bottom: 4%;"></AsideList>
+        <AsideList :listItems="list1.items" :title="list1.title" :link="list1.link" style="margin-bottom: 4%;">
+        </AsideList>
         <AsideList :listItems="list2.items" :title="list2.title" :link="list2.link"></AsideList>
       </el-aside>
     </el-container>
@@ -84,4 +88,24 @@ export default {
 </script>
 
 <style scoped>
+.out-side-container {
+  width: 1226px;
+  margin: 20px auto;
+}
+
+.list {
+  justify-content: space-between;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 850px;
+}
+
+.list-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 600px;
+}
 </style>

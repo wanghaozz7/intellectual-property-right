@@ -20,9 +20,10 @@ import Main from '@/views/homePage/main/index.vue'
 import Policies from '@/views/homePage/Policies'
 import Footer from '@/views/homePage/footer'
 import Demand from '@/views/homePage/demand'
+import store from '@/store/index'
 export default {
   name: 'HomePage',
-  components: { Top, Nav, News, Main, Footer, Policies, Demand}
+  components: { Top, Nav, News, Main, Footer, Policies, Demand }
 }
 </script>
 

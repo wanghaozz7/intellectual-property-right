@@ -40,6 +40,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-vue": "^8.0.3",
+    "js-cookie": "^3.0.1",
     "node-sass": "^7.0.1",
     "sass-loader": "^13.0.2",
     "vue-template-compiler": "^2.6.14",

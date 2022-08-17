@@ -8,8 +8,11 @@
     <ul>
       <li v-for="item in listItems" class="content">
         <span class="content-title">
-          <a href="#">{{ item.title }}</a></span>
-        <span>{{ item.date }}</span>
+          <router-link :to="{ 'name': 'articleDetail', 'query': { 'type': 'notify', 'id': item.id } }" target="_blank">
+            {{ item.title }}
+          </router-link>
+        </span>
+        <span>{{ item.publish_date }}</span>
       </li>
     </ul>
   </div>

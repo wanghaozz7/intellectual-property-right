@@ -22,7 +22,7 @@
             <li>
               <router-link :to="{ 'name': 'articleDetail', 'query': { 'type': 'notify', 'id': item.id } }"
                 target="_blank">
-                <a> {{ item.title }} </a>
+                {{ item.title }}
               </router-link>
             </li>
           </ul>
@@ -38,102 +38,24 @@
         </div>
         <div class="content">
           <ul>
-            <li>
-              <a href="">
+            <li v-for="item of infoList">
+              <router-link :to="{ 'name': 'articleDetail', 'query': { 'type': 'news', 'id': item.id } }"
+                target="_blank">
                 <div>
                   <div class="img">
                     <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg69fvkQYotJv6ygUwwgM4_gE.jpg.webp"
                       alt="">
                   </div>
                   <div class="itemInformation">
-                    <div class="itemTitle">啊啊啊</div>
-                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd
-                      fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
+                    <div class="itemTitle">{{ item.title }}</div>
+                    <div class="itemContent">{{ item.content }}</div>
                   </div>
                 </div>
-              </a>
+              </router-link>
+
               <div class="line"></div>
             </li>
-            <li>
-              <a href="">
-                <div>
-                  <div class="img">
-                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg-bbvkQYosJ2X-QIwggM46wE.jpg.webp"
-                      alt="">
-                  </div>
-                  <div class="itemInformation">
-                    <div class="itemTitle">啊啊啊</div>
-                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd
-                      fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
-                  </div>
-                </div>
-              </a>
-              <div class="line"></div>
-            </li>
-            <li>
-              <a href="">
-                <div>
-                  <div class="img">
-                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg69fvkQYotJv6ygUwwgM4_gE.jpg.webp"
-                      alt="">
-                  </div>
-                  <div class="itemInformation">
-                    <div class="itemTitle">啊啊啊</div>
-                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd
-                      fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
-                  </div>
-                </div>
-              </a>
-              <div class="line"></div>
-            </li>
-            <li>
-              <a href="">
-                <div>
-                  <div class="img">
-                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg-bbvkQYosJ2X-QIwggM46wE.jpg.webp"
-                      alt="">
-                  </div>
-                  <div class="itemInformation">
-                    <div class="itemTitle">啊啊啊</div>
-                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd
-                      fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
-                  </div>
-                </div>
-              </a>
-              <div class="line"></div>
-            </li>
-            <li>
-              <a href="">
-                <div>
-                  <div class="img">
-                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg69fvkQYotJv6ygUwwgM4_gE.jpg.webp"
-                      alt="">
-                  </div>
-                  <div class="itemInformation">
-                    <div class="itemTitle">啊啊啊</div>
-                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd
-                      fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
-                  </div>
-                </div>
-              </a>
-              <div class="line"></div>
-            </li>
-            <li>
-              <a href="">
-                <div>
-                  <div class="img">
-                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg69fvkQYotJv6ygUwwgM4_gE.jpg.webp"
-                      alt="">
-                  </div>
-                  <div class="itemInformation">
-                    <div class="itemTitle">啊啊啊</div>
-                    <div class="itemContent">3月18日，位于四川甘孜藏族自治州的雅砻江两河口水电站一台机组正式投sdfsd
-                      fsdfssdfsdfsdfsdfsdfsddfsdafsdfasdfasdfasdafasdf</div>
-                  </div>
-                </div>
-              </a>
-              <div class="line"></div>
-            </li>
+
           </ul>
         </div>
       </div>
@@ -143,6 +65,7 @@
 
 <script>
 import "@/assets/css/base.css"
+import { newsList, notifyList } from '@/api/news'
 const imgUrlList = [
   {
     name: '6.png',
@@ -153,26 +76,34 @@ const imgUrlList = [
     src: require('../../../assets/img/5.jpg')
   }
 ]
+
+
 export default {
   name: 'NewsPage',
   data() {
     return {
       imgUrlList: imgUrlList,
-      notifyList: [
-        { id: 1, title: '回顾2020：科学家在线推出多个路演项目共获4亿融资' },
-        { id: 2, title: '海外优质科创项目线上路演-先进制造专场' },
-        { id: 3, title: '科技创投私董会——区块链专场' },
-        { id: 4, title: '回顾2020：科学家在线推出多个路演项目共获4亿融资' },
-        { id: 5, title: '科技创投私董会——区块链专场' },
-        { id: 6, title: '回顾2020：科学家在线推出多个路演项目共获4亿融资' },
-        { id: 7, title: '海外优质科创项目线上路演-先进制造专场' },
-        { id: 8, title: '回顾2020：科学家在线推出多个路演项目共获4亿融资' },
-        { id: 9, title: '科技创投私董会——区块链专场' },
-        { id: 10, title: '海外优质科创项目线上路演-先进制造专场' },
-        { id: 11, title: '回顾2020：科学家在线推出多个路演项目共获4亿融资' },
-        { id: 12, title: '科技创投私董会——区块链专场' },
-      ]
+      notifyList: [],
+      infoList: []
     }
+  },
+  created() {
+    let query = {
+      limit: 5,
+      page: 1
+    }
+    newsList(query).then(res => {
+      this.infoList = res.results;
+      console.log(this.infoList);
+    }).catch(err => {
+      console.log(err);
+    })
+    notifyList().then(res => {
+      this.notifyList = res;
+      console.log(this.notifyList);
+    }).catch(err => {
+      console.log(err);
+    })
   }
 }
 </script>
@@ -286,13 +217,19 @@ export default {
 
 .itemTitle {
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: black;
+  font-size: 18px;
 }
 
 .itemContent {
   margin-top: 10px;
   font-size: 14px;
   overflow: hidden;
+  text-overflow: ellipsis;
   color: rgb(144, 147, 149);
+  height: 70px;
 }
 
 .img {

@@ -10,7 +10,8 @@
 <script >
 import Top from '@/components/Top/index.vue'
 import ArticleList from '@/components/ArticleList/index.vue'
-
+import { notifyList } from '@/api/news'
+import { law, cases } from '@/api/policy'
 export default {
   name: 'noticeDetail',
   components: {
@@ -19,176 +20,46 @@ export default {
   },
   data() {
     return {
-      items: [
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        },
-        {
-          title: '国际贸易中企业知识产权风险防范',
-          date: '2022-02-04'
-        }],
+      items: [],
       total: 13000,
       page: 1,
       limit: 10,
       sizes: [10, 15, 20, 25, 30],
       list1: {
-        items: [
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          }
-        ],
-        title: '工作动态',
+        items: [],
+        title: '法律法规',
         link: ''
       },
       list2: {
-        items: [
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          },
-          {
-            title: '守护健康中国，高烯石墨烯康护纤维助力科技战疫！',
-            date: '04-20'
-          }
-        ],
-        title: '工作动态',
+        items: [],
+        title: '保护案例',
         link: ''
       }
     }
+  },
+  created() {
+    const query = {
+      limit: 2,
+      page: 1
+    }
+    notifyList().then(res => {
+      this.items = res;
+      console.log(this.items);
+    }).catch(err => {
+      console.log(err);
+    });
+    law(query).then(res => {
+      this.list1.items = res.results;
+      console.log(this.list1.items);
+    }).catch(err => {
+      console.log(err);
+    })
+    cases(query).then(res => {
+      this.list2.items = res.results;
+      console.log(this.list2.items);
+    }).catch(err => {
+      console.log(err);
+    })
   }
 };</script>
 

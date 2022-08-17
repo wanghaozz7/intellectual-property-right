@@ -2,6 +2,7 @@ import axios from 'axios'
 import qs from 'qs'
 import { Message } from 'element-ui'
 import store from '@/store'
+import { getToken } from '@/utils/auth'
 
 // create an axios instance
 const service = axios.create({
@@ -15,9 +16,15 @@ service.interceptors.request.use(
   config => {
     // do something before request is sent
 
+    if (store.getters.token && getToken()) {
+      // let each request carry token
+      // ['X-Token'] is a custom headers key
+      // please modify it according to the actual situation
+      config.headers['Authorization'] = 'Bearer ' + getToken()
+    }
     if (config.method === 'get') {
       // 如果是get请求，且params是数组类型如arr=[1,2]，则转换成arr=1&arr=2,不转换会显示为arr[]=1&arr[]=2
-      config.paramsSerializer = function (params) {
+      config.paramsSerializer = function(params) {
         return qs.stringify(params, { arrayFormat: 'repeat' })
       }
     }
