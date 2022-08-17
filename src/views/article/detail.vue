@@ -15,15 +15,17 @@
         </div>
       </el-header>
       <el-main>
-          <div class="article-detail__content" v-html="detail.content"></div>
+        <div class="article-detail__content" v-html="detail.content"></div>
       </el-main>
     </el-container>
   </div>
 </template>
 
 <script>
+import { newsDetail, notifyDetail } from '@/api/news';
+import { lawDetail, caseDetail } from '@/api/policy'
 export default {
-  data () {
+  data() {
     return {
       type: '',
       id: '',
@@ -36,7 +38,7 @@ export default {
   components: {
   },
 
-  created () {
+  created() {
     this.detail = {
       title: '这里是新闻标题',
       create_time: '2022-02-02',
@@ -52,6 +54,51 @@ export default {
     <p class="vsbcontent_img"><img src="https://www.dgut.edu.cn/__local/5/A0/E6/C364A30FF8D862ED44C4F3FFAE7_E21F40A7_2D11F.jpg" width="800" alt="2D11F" vsbhref="vurl" vurl="https://www.dgut.edu.cn/__local/5/A0/E6/C364A30FF8D862ED44C4F3FFAE7_E21F40A7_2D11F.jpg" vheight="" vwidth="800" orisrc="https://www.dgut.edu.cn/__local/5/A0/E6/C364A30FF8D862ED44C4F3FFAE7_E21F40A7_2D11F.jpg" class="img_vsb_content"></p>
     <p>下来，学校领导班子成员及各二级学院负责人将深入推进“访企拓岗促就业”专项行动，主动走进镇街园区、走进行业企业，走访用人单位，为毕业生挖掘更多岗位资源、精准推荐岗位信息，促进毕业生实现更高质量更充分就业。同时，学校扎实开展社会需求调查和毕业生就业状况跟踪调查，充分听取用人单位的意见和建议，为深化教育教学改革、人才培养和就业指导服务提供支撑，为区域经济社会发展提供智力支持和人力支撑。</p>`,
     }
+
+
+    // 根据类型和
+    let type = this.$route.query.type;
+    let id = this.$route.query.id;
+    if (type === 'news') {
+      newsDetail(id).then(res => {
+        console.log(res);
+        this.detail.title = res.title;
+        this.detail.create_time = res.created_time;
+        this.detail.content = res.content;
+        this.detail.author = res.author;
+      }).catch(err => {
+        console.log(err);
+      });
+    } else if (type === 'notify') {
+      notifyDetail(id).then(res => {
+        console.log(res);
+        this.detail.title = res.title;
+        this.detail.create_time = res.created_time;
+        this.detail.content = res.content;
+      }).catch(err => {
+        console.log(err);
+      });
+    } else if (type === 'law') {
+      lawDetail(id).then(res => {
+        console.log(res);
+        this.detail.title = res.title;
+        this.detail.create_time = res.created_time;
+        this.detail.content = res.content;
+        this.detail.author = res.author;
+      }).catch(err => {
+        console.log(err);
+      });
+    } else if (type === 'case') {
+      caseDetail(id).then(res => {
+        console.log(res);
+        this.detail.title = res.title;
+        this.detail.create_time = res.created_time;
+        this.detail.content = res.content;
+        this.detail.author = res.author;
+      }).catch(err => {
+        console.log(err);
+      });
+    }
   },
 
   methods: {
@@ -60,7 +107,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .main {
   background: #f6fffb;
   width: 90%;
@@ -90,7 +136,7 @@ export default {
   line-height: 48px;
   color: #474747;
   text-align: center;
-  margin-top:20px;
+  margin-top: 20px;
 }
 
 .article-detail-title-desc-wrapper {

@@ -8,7 +8,8 @@
     <ul>
       <li v-for="item in listItems" class="content">
         <span class="content-title">
-          <router-link :to="{ 'name': 'articleDetail', 'query': { 'type': 'notify', 'id': item.id } }" target="_blank">
+          <router-link :to="{ 'name': 'articleDetail', 'query': { 'type': aside_type, 'id': item.id } }"
+            target="_blank">
             {{ item.title }}
           </router-link>
         </span>
@@ -33,6 +34,10 @@ export default {
       default: ''
     },
     link: {
+      type: String,
+      default: ''
+    },
+    aside_type: {
       type: String,
       default: ''
     }

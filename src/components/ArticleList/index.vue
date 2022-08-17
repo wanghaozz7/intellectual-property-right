@@ -8,7 +8,7 @@
         <ul style="float: left;">
           <li v-for="item in items" class="list">
             <span class="list-title">
-              <router-link :to="{ 'name': 'articleDetail', 'query': { 'type': 'notify', 'id': item.id } }"
+              <router-link :to="{ 'name': 'articleDetail', 'query': { 'type': link_type, 'id': item.id } }"
                 target="_blank">
                 {{ item.title }}
               </router-link>
@@ -18,9 +18,10 @@
         </ul>
       </el-main>
       <el-aside width="350px" style="padding: 0;background-color: #fff;">
-        <AsideList :listItems="list1.items" :title="list1.title" :link="list1.link" style="margin-bottom: 4%;">
+        <AsideList :listItems="list1.items" :title="list1.title" :link="list1.link" style="margin-bottom: 4%;"
+          :aside_type="aside1">
         </AsideList>
-        <AsideList :listItems="list2.items" :title="list2.title" :link="list2.link"></AsideList>
+        <AsideList :listItems="list2.items" :title="list2.title" :link="list2.link" :aside_type="aside2"></AsideList>
       </el-aside>
     </el-container>
     <pagination style="padding-left: 200px;" v-show="total > 0" :total="total" :page.sync="page" :limit.sync="limit"
@@ -77,6 +78,18 @@ export default {
       default() {
         return {}
       }
+    },
+    link_type: {
+      type: String,
+      default: ''
+    },
+    aside1: {
+      type: String,
+      default: ''
+    },
+    aside2: {
+      type: String,
+      default: ''
     }
   },
   methods: {

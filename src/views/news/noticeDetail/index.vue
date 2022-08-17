@@ -2,7 +2,7 @@
   <div style="background-color: #fff;">
     <Top :sign=true holder="输入资讯关键词"></Top>
     <ArticleList :items=items :total=total :page=page :limit=limit :sizes=sizes title="通知公告" :list1="list1"
-      :list2="list2">
+      :list2="list2" link_type="notify" aside1="law" aside2="case">
     </ArticleList>
   </div>
 </template>
@@ -28,12 +28,12 @@ export default {
       list1: {
         items: [],
         title: '法律法规',
-        link: ''
+        link: '/#/policiesDetail/law'
       },
       list2: {
         items: [],
         title: '保护案例',
-        link: ''
+        link: '/#/policiesDetail/case'
       }
     }
   },

@@ -107,7 +107,7 @@ export default {
 
 
       login(userInfo).then(res => {
-        let token = res.data.response_data.token;
+        let token = res.data.token;
         let name = res.data.name;
         store.commit('SET_TOKEN', token);
         store.commit('SET_NAME', name);
@@ -116,8 +116,6 @@ export default {
           type: 'success'
         });
         setToken(token);
-
-
         // 成功提示
         window.setTimeout(function () {
           router.push({ name: 'homePage' });

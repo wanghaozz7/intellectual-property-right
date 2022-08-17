@@ -4,8 +4,9 @@
       <h2>政策法规</h2>
     </div>
     <div style="width: 100%;height: 400px;">
-      <showPolicies title="法律法规" :items=laws style="margin-right: 26px;" link='/#/policiesDetail/law'></showPolicies>
-      <showPolicies title="保护案例" :items=cases link='/#/policiesDetail/case'></showPolicies>
+      <showPolicies title="法律法规" :items=laws style="margin-right: 26px;" link='/#/policiesDetail/law' link_type="law">
+      </showPolicies>
+      <showPolicies title="保护案例" :items=cases link='/#/policiesDetail/case' link_type="case"></showPolicies>
     </div>
     <!-- <div class="hd2 clearfix">
       <ul>
