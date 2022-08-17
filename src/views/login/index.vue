@@ -111,11 +111,11 @@ export default {
         let name = res.data.name;
         store.commit('SET_TOKEN', token);
         store.commit('SET_NAME', name);
+        setToken(token);
         this.$message({
           message: '登录成功！',
           type: 'success'
         });
-        setToken(token);
         // 成功提示
         window.setTimeout(function () {
           router.push({ name: 'homePage' });

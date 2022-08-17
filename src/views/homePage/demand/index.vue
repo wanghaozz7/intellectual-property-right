@@ -144,14 +144,12 @@ export default {
     }
     demandList(query).then(res => {
       const tmp = res.results;
-      console.log(tmp);
       for (let idx in tmp) {//分为三组
         let i = idx / 2;
         const source = tmp[idx];
         const date = source.publish_date.split('-');
         const title = source.title;
         const demand = source.demand_content;
-        console.log(date, title, demand);
         const data = {
           date,
           title,

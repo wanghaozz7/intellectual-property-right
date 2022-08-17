@@ -148,13 +148,11 @@ export default {
     }
     law(query).then(res => {
       this.laws = res.results;
-      console.log(this.laws);
     }).catch(err => {
       console.log(err);
     })
     cases(query).then(res => {
       this.cases = res.results;
-      console.log(this.laws);
     }).catch(err => {
       console.log(err);
     })

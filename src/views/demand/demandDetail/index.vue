@@ -7,7 +7,8 @@
           <el-tag>{{ field[field_idx] }}</el-tag> 寻求提升PET物性稳定性、阻燃性、尺寸稳定性的方法
         </span>
         <span>
-          <el-button :type=button_type size="small" @click="handleClick">{{ button_text }}</el-button>
+          <el-button :type=button_type size="small" @click="handleClick" style="transition: all .3s;">{{ button_text }}
+          </el-button>
         </span>
       </div>
 
@@ -71,6 +72,8 @@ import Top from '@/components/Top/index.vue'
 import store from '@/store/index'
 import router from '@/router/index'
 import { getToken } from '@/utils/auth';
+import { demandConsult } from '@/api/demand';
+
 const field = ['节能环保', '生物医药', '机械制造', '电子信息', '化工化学', '新能源', '材料科学', '其他'];
 
 
@@ -96,15 +99,37 @@ export default {
   },
   methods: {
     handleClick() {
-      let token = getToken();
-      console.log(token);
-      if (token === '') {
-        console.log('未登录');
+      store.commit('SET_TOKEN', getToken());
+      let token = store.state.token;
+      if (token === '' || typeof (token) === "undefined") {
+        console.log(token);
 
+        console.log('未登录');
+        this.$message.error('请先登录！');
+        window.setTimeout(function () {
+          router.push({ name: 'login' });
+        }, 1000);
       } else {
         console.log('已登录');
-
+        this.button_type = 'success';
+        this.button_text = '已感兴趣';
+        const data = {
+          demand: '1'
+        }
+        demandConsult(data).then(res => {
+          console.log(res);
+          this.open1();
+        }).catch(err => {
+          console.log(err);
+        });
       }
+    },
+    open1() {
+      this.$notify({
+        title: '成功添加',
+        message: '已将该需求设为感兴趣',
+        type: 'success'
+      });
     }
   }
 };

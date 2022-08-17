@@ -17,12 +17,10 @@ export default new Vuex.Store({
   mutations: {
     SET_TOKEN: (state, token) => {
       state.token = token;
-      console.log(state.token);
 
     },
     SET_NAME: (state, name) => {
       state.name = name;
-      console.log(state.name);
     }
   },
   actions: {

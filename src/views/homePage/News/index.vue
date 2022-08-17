@@ -94,13 +94,11 @@ export default {
     }
     newsList(query).then(res => {
       this.infoList = res.results;
-      console.log(this.infoList);
     }).catch(err => {
       console.log(err);
     })
     notifyList().then(res => {
       this.notifyList = res;
-      console.log(this.notifyList);
     }).catch(err => {
       console.log(err);
     })

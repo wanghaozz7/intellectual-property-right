@@ -20,10 +20,15 @@ import Main from '@/views/homePage/main/index.vue'
 import Policies from '@/views/homePage/Policies'
 import Footer from '@/views/homePage/footer'
 import Demand from '@/views/homePage/demand'
+import { getToken } from '@/utils/auth'
 import store from '@/store/index'
 export default {
   name: 'HomePage',
-  components: { Top, Nav, News, Main, Footer, Policies, Demand }
+  components: { Top, Nav, News, Main, Footer, Policies, Demand },
+  created() {
+    const token = getToken();
+    store.commit('SET_TOKEN', token)
+  }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="contain">
     <div class="content">
-      <router-link to="/moreExpert">
+      <router-link to="/">
         <div class="title">
           <span style="width: 160px;">知识产权服务平台</span>
         </div>
