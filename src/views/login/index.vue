@@ -20,12 +20,14 @@
       <form>
         <h1>注册</h1>
         <span>请输入您的信息</span>
-        <input type="text" id="idcard" name="idcard" placeholder="手机号码" onblur="validate_idcard(this.value)">
-        <input type="text" id="Username" name="username" placeholder="姓名" onblur="validate_username(this.value)">
+        <input type="text" id="idcard" name="idcard" placeholder="用户名" onblur="validate_idcard(this.value)"
+          v-model="registerInfo.username">
+        <input type="text" id="Username" name="username" placeholder="姓名" onblur="validate_username(this.value)"
+          v-model="registerInfo.realname">
         <input type="password" id="Password" name="password" placeholder="以字母开头只能包含字母、数字和下划线"
-          onblur="validate_password(this.value)">
+          onblur="validate_password(this.value)" v-model="registerInfo.first_password">
         <input type="password" id="Password2" name="password2" onblur="validate_password2(this.value)"
-          placeholder="确认密码">
+          placeholder="确认密码" v-model="registerInfo.second_password">
         <button @click="registerConfirm" type="button">注册</button>
       </form>
     </div>
@@ -62,7 +64,7 @@
 
 <script>
 import { validate_idcard, validate_username, validate_password, validate_password2 } from './index'
-import { getInfo, login } from '@/api/user'
+import { register, login } from '@/api/user'
 import { getToken, setToken } from '@/utils/auth';
 import store from '@/store/index'
 import router from '@/router/index'
@@ -90,6 +92,12 @@ export default {
       enrollInfo: {
         username: '',
         key: '',
+      },
+      registerInfo: {
+        username: '',
+        realname: '',
+        first_password: '',
+        second_password: ''
       },
       type,
     }
@@ -135,13 +143,25 @@ export default {
 
     },
     registerConfirm() {
-      console.log('register confirm');
-      validate_idcard();
-      validate_username();
-      validate_password();
-      validate_password2();
-      return;
-    }
+      console.log(this.registerInfo);
+      register(this.registerInfo).then(res => {
+        console.log(res);
+        this.$message({
+          message: '注册成功！',
+          type: 'success'
+        });
+        window.setTimeout(function () {
+          router.push({ name: 'homePage' });
+        }, 1000);
+      }).catch(err => {
+        console.log(err);
+        this.$message.error('注册失败！');
+      });
+    },
+    validate_idcard,
+    validate_username,
+    validate_password,
+    validate_password2
   },
 
   created() {

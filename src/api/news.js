@@ -15,10 +15,11 @@ export function newsDetail(id) {
   })
 }
 // 公告列表
-export function notifyList() {
+export function notifyList(query) {
   return request({
     url: '/api/announce',
-    method: 'get'
+    method: 'get',
+    params: query
   })
 }
 // 公告详情

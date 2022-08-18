@@ -43,12 +43,11 @@
                 target="_blank">
                 <div>
                   <div class="img">
-                    <img src="https://28952661.s61i.faiusr.com/2/AD0I1ZDnDRACGAAg69fvkQYotJv6ygUwwgM4_gE.jpg.webp"
-                      alt="">
+                    <img :src=item.full_image_path[0].url alt="">
                   </div>
                   <div class="itemInformation">
                     <div class="itemTitle">{{ item.title }}</div>
-                    <div class="itemContent">{{ item.content }}</div>
+                    <div class="itemContent">{{ item.desc }}</div>
                   </div>
                 </div>
               </router-link>
@@ -94,11 +93,17 @@ export default {
     }
     newsList(query).then(res => {
       this.infoList = res.results;
+      console.log('info', this.infoList);
+
     }).catch(err => {
       console.log(err);
     })
-    notifyList().then(res => {
-      this.notifyList = res;
+    notifyList({
+      limit: 12,
+      page: 1
+    }).then(res => {
+      this.notifyList = res.results;
+      console.log('notify', this.notifyList);
     }).catch(err => {
       console.log(err);
     })
@@ -190,7 +195,7 @@ export default {
   transition: all .3s;
 }
 
-.information:hover {
+.right:hover {
   border: 1px solid #b7b4b4;
   /*box-shadow: 0 0 3px #858585, 0 0 5px #e3e3e3;*/
   transition: all .3s;

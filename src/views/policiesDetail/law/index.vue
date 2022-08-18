@@ -2,7 +2,7 @@
   <div style="background-color: #fff;">
     <Top :sign=true holder="输入资讯关键词"></Top>
     <ArticleList :items=items :total=total :page=page :limit=limit :sizes=sizes title="法律法规" :list1="list1"
-      :list2="list2" link_type="law" aside1="notify" aside2="news"></ArticleList>
+      :list2="list2" link_type="law" aside1="notify" aside2="news" @func="handlechange"></ArticleList>
   </div>
 </template>
 
@@ -20,9 +20,9 @@ export default {
   data() {
     return {
       items: [],
-      total: 13000,
+      total: 1,
       page: 1,
-      limit: 10,
+      limit: 15,
       sizes: [10, 15, 20, 25, 30],
       list1: {
         items: [],
@@ -37,28 +37,65 @@ export default {
     }
   },
   created() {
-    const query = {
-      limit: 2,
-      page: 1
-    };
-    law(query).then(res => {
-      this.items = res.results;
-      console.log(this.items);
+    law({
+      limit: 100000,
+      page: this.page
+    }).then(res => {
+      this.total = res.results.length;
     }).catch(err => {
       console.log(err);
     });
-    newsList(query).then(res => {
+    law({
+      limit: this.limit,
+      page: this.page
+    }).then(res => {
+      this.items = res.results;
+      console.log('notify2', this.items);
+      console.log('length2:' + this.items.length);
+
+    }).catch(err => {
+      console.log(err);
+    });
+
+
+
+    newsList({
+      limit: 6,
+      page: 1
+    }).then(res => {
       this.list2.items = res.results;
       console.log(this.list2.items);
     }).catch(err => {
       console.log(err);
     });
-    notifyList().then(res => {
-      this.list1.items = res
+    notifyList({
+      limit: 6,
+      page: 1
+    }).then(res => {
+      this.list1.items = res.results;
       console.log(this.list1.items);
     }).catch(err => {
       console.log(err);
     });
+  },
+  methods: {
+    handlechange(data) {
+      this.limit = data.limit;
+      this.page = data.page;
+      this.getLeftList();
+
+    },
+    getLeftList() {
+      law({
+        limit: this.limit,
+        page: this.page
+      }).then(res => {
+        this.items = res.results;
+        console.log('notify', this.items);
+      }).catch(err => {
+        console.log(err);
+      });
+    }
   }
 };</script>
 

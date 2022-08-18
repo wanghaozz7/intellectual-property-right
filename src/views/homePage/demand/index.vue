@@ -10,7 +10,7 @@
     </div>
     <div class="content">
       <div class="contentBlock" v-for="block of content">
-        <a href="" v-for="item of block">
+        <router-link v-for="item of block" :to="{ 'name': 'demandDetail', 'query': { 'id': item.id } }" target="_blank">
           <div class="item">
             <div class="date">
               <h1>{{ item.date[2] }}</h1>
@@ -27,7 +27,7 @@
               </div>
             </div>
           </div>
-        </a>
+        </router-link>
         <!-- <a href="">
           <div class="item">
             <div class="date">
@@ -138,25 +138,27 @@ export default {
     }
   },
   created() {
-    const query = {
-      limit: 3,
-      page: 1
-    }
-    demandList(query).then(res => {
-      const tmp = res.results;
+    demandList().then(res => {
+      const tmp = res;
+      console.log('demand', tmp);
+      this.content = [[], [], []];
       for (let idx in tmp) {//分为三组
-        let i = idx / 2;
+        let i = Math.floor(idx / 2);
         const source = tmp[idx];
-        const date = source.publish_date.split('-');
+        const date = source.created_time.split('-');
         const title = source.title;
         const demand = source.demand_content;
+        const id = source.id;
         const data = {
           date,
           title,
-          demand
-        }
+          demand,
+          id
+        };
+        console.log(i, data);
         this.content[i].push(data);
       }
+      console.log('content', this.content);
     }).catch(err => {
       console.log(err);
     });

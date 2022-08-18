@@ -115,7 +115,7 @@
           </div>
           <div class="abstract">
             <p>
-              {{ patentInfo.abstract_text }}
+              {{ patentInfo.content_text }}
             </p>
           </div>
         </div>
@@ -137,11 +137,11 @@
           <el-input v-model="form.name" placeholder="您的姓名"></el-input>
         </el-form-item>
         <el-form-item label="手机号码:">
-          <el-input v-model="form.phone_number" placeholder="您的电话"></el-input>
+          <el-input v-model="form.telephone" placeholder="您的电话"></el-input>
         </el-form-item>
       </el-form>
       <div class="item_ask" style="float: none;">
-        <a href="javascript:void(0)" style="margin: 0 auto;" @click="dialogFormVisible = false">确定</a>
+        <a href="javascript:void(0)" style="margin: 0 auto;" @click="consult_submit">确定</a>
       </div>
       <p style="text-align: center;margin-top: 10px;color: #a1a3a6;"><i class="el-icon-lock"></i> 信息保护中，请放心填写</p>
     </el-dialog>

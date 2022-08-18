@@ -26,12 +26,12 @@
             <!-- 列表 -->
             <transition name="el-fade-in-linear" v-for="(item, index) of demand[selected_idx]">
               <el-card class="show_card" body-style="height:100%;padding:0">
-                <a :href="'/#/demandDetail?id=' + selected_idx" target="_blank">
-                  <div class="customer">{{ item.customer }}</div>
+                <a :href="'/#/demandDetail?id=' + item.id+'&idx='+selected_idx" target="_blank">
+                  <div class="customer">{{ item.unit }}</div>
                   <div class="title">{{ item.title }}</div>
-                  <div class="detail">{{ item.details }}</div>
-                  <div class="date">{{ item.date }}</div>
-                  <div class="progress">{{ item.progress }}</div>
+                  <div class="detail">{{ item.demand_content }}</div>
+                  <div class="date">{{ item.publish_date }}</div>
+                  <div class="progress">最新进展:需求确认完毕</div>
                 </a>
               </el-card>
             </transition>
@@ -50,12 +50,35 @@
             <el-radio-group v-if="item.type === 'radio'" v-model="form[item.fieldName]">
               <el-radio-button v-for="radio in item.msg" :key="radio" :label="radio"></el-radio-button>
             </el-radio-group>
-            <el-upload class="upload-demo" drag action="https://jsonplaceholder.typicode.com/posts/" multiple
-              v-if="item.type === 'upload'">
+          </el-form-item>
+        </el-form>
+        <el-form :inline="true" :model="form" label-width="150px" label-position='left'>
+          <el-form-item key="file" label="上传图片或其他资料">
+            <el-upload class="upload-demo" drag action="https://jsonplaceholder.typicode.com/posts/" multiple>
               <i class="el-icon-upload"></i>
               <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
               <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
             </el-upload>
+          </el-form-item>
+          <el-form-item label="解决期限" label-width="100px">
+            <el-date-picker v-model="form.end_date" align="right" type="date" placeholder="选择日期"
+              :picker-options="pickerOptions" style="width: 360px;">
+            </el-date-picker>
+          </el-form-item>
+          <el-form-item label="最佳预算">
+            <el-input style="width: 180px;" v-model="form.best_budget"></el-input>
+          </el-form-item>
+          <el-form-item label="预算上限" label-width="80px">
+            <el-input style="width: 180px;" v-model="form.max_budget"></el-input>
+          </el-form-item>
+          <el-form-item label="单位" label-width="40px">
+            <el-input style="width: 320px;" v-model="form.unit"></el-input>
+          </el-form-item>
+          <el-form-item label="技术指标">
+            <el-input style="width: 360px;" placeholder='3个左右，逗号’，‘分隔开' v-model="form.technical_index"></el-input>
+          </el-form-item>
+          <el-form-item label="不感兴趣的技术" label-width="110px">
+            <el-input style="width: 340px;" placeholder='3个左右，逗号’，‘分隔开' v-model="form.uninterested_technolo"></el-input>
           </el-form-item>
           <el-button type="primary" style="width: 100%;" @click="Submit">提交需求</el-button>
         </el-form>

@@ -4,44 +4,46 @@
     <el-card class="box-card">
       <div slot="header" class="header">
         <span style="font-size: 20px;">
-          <el-tag>{{ field[field_idx] }}</el-tag> 寻求提升PET物性稳定性、阻燃性、尺寸稳定性的方法
+          <el-tag>{{ field[field_idx] }}</el-tag> {{ demandDetail.title }}
         </span>
         <span>
           <el-button :type=button_type size="small" @click="handleClick" style="transition: all .3s;">{{ button_text }}
           </el-button>
         </span>
       </div>
-
       <el-descriptions class="margin-top" :column="5" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
         :contentStyle="{ 'text-align': 'center' }">
-        <template slot="title">山东某新材料有限公司</template>
-        <template slot="extra">2022-05-27 10:14</template>
-        <el-descriptions-item label="关键词">PET PET 阻燃 阻燃</el-descriptions-item>
-        <el-descriptions-item label="客户类型">企业</el-descriptions-item>
-        <el-descriptions-item label="解决期限">未确认</el-descriptions-item>
-        <el-descriptions-item label="最佳预算">未确定</el-descriptions-item>
-        <el-descriptions-item label="预算上线">未确定</el-descriptions-item>
+        <template slot="title">{{ demandDetail.unit }}</template>
+        <template slot="extra">{{ demandDetail.publish_date }}</template>
+        <el-descriptions-item label="关键词"><span v-for="item of demandDetail.keywords">{{ item }}</span>
+        </el-descriptions-item>
+        <el-descriptions-item label="客户类型">{{ demandDetail.client_type }}</el-descriptions-item>
+        <el-descriptions-item label="解决期限">{{ demandDetail.end_date }}</el-descriptions-item>
+        <el-descriptions-item label="最佳预算">{{ demandDetail.best_budget }}</el-descriptions-item>
+        <el-descriptions-item label="预算上限">{{ demandDetail.max_budget }}</el-descriptions-item>
       </el-descriptions>
       <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
         :contentStyle="{ 'text-align': 'left' }">
-        <el-descriptions-item label="附件"></el-descriptions-item>
+        <el-descriptions-item label="附件">
+          <span v-for="item of demandDetail.file">{{ item }}</span>
+        </el-descriptions-item>
       </el-descriptions>
       <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
         :contentStyle="{ 'text-align': 'left' }">
         <el-descriptions-item label="需求详情">
-          企业研究过程遇到的难点是：(1)PET吸水，从而导致物性不稳定；(2)PET 不容易做到阻燃；(3)PET 尺寸不稳定。 希望找到专家或研究院所，能够解决难点。占位占位占位占位占位占位占位占位占位
+          {{ demandDetail.demand_content }}
         </el-descriptions-item>
       </el-descriptions>
       <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
         :contentStyle="{ 'text-align': 'left' }">
         <el-descriptions-item label="技术指标">
-          尚未填写
+          <span v-for="item of demandDetail.technical_index">{{ item }}</span>
         </el-descriptions-item>
       </el-descriptions>
       <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'text-align': 'center' }"
         :contentStyle="{ 'text-align': 'left' }">
         <el-descriptions-item label="不感兴趣的技术">
-          尚未填写
+          <span v-for="item of demandDetail.uninterested_technology">{{ item }}</span>
         </el-descriptions-item>
       </el-descriptions>
       <!-- <el-descriptions :column="1" border :labelStyle="{ 'width': '80px', 'height': '200px' }"
@@ -72,7 +74,7 @@ import Top from '@/components/Top/index.vue'
 import store from '@/store/index'
 import router from '@/router/index'
 import { getToken } from '@/utils/auth';
-import { demandConsult } from '@/api/demand';
+import { demandConsult, demandDetail } from '@/api/demand';
 
 const field = ['节能环保', '生物医药', '机械制造', '电子信息', '化工化学', '新能源', '材料科学', '其他'];
 
@@ -90,12 +92,20 @@ export default {
 
       },
       button_type: 'danger',
-      button_text: '我感兴趣'
+      button_text: '我感兴趣',
+      demandDetail: {}
     }
   },
   created() {
-    this.field_idx = this.$route.query.id;
+    this.field_idx = this.$route.query.idx;
     console.log(this.field_idx);
+    const id = this.$route.query.id;
+    demandDetail(id).then(res => {
+      console.log(res);
+      this.demandDetail = res;
+    }).catch(err => {
+      console.log(err);
+    });
   },
   methods: {
     handleClick() {

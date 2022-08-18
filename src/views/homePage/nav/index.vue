@@ -77,12 +77,16 @@
     <el-drawer :with-header="false" :visible.sync="Drawer" direction="rtl" size="300px">
       <el-collapse v-model="activeNames" style="padding: 20px;">
         <el-collapse-item title="我感兴趣的需求" name="1">
-          <div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>
-          <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>
+          <router-link v-for="item of personalDemandConsult"
+            :to="{ 'name': 'articleDetail', 'query': { 'type': 'news', 'id': item.id } }" target="_blank">
+            <div>{{ item.demand_title }}</div>
+          </router-link>
         </el-collapse-item>
         <el-collapse-item title="我提出的需求" name="2">
-          <div>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；</div>
-          <div>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</div>
+          <router-link v-for="item of personalDemand"
+            :to="{ 'name': 'articleDetail', 'query': { 'type': 'news', 'id': item.id } }" target="_blank">
+            <div>{{ item.demand_title }}</div>
+          </router-link>
         </el-collapse-item>
       </el-collapse>
       <el-button type="danger" style="margin: 12px 100px;" @click="handleLogOut"><i class="el-icon-error"></i>退出登录
@@ -98,7 +102,7 @@ import store from '@/store/index'
 import { getInfo } from '@/api/user'
 import { getToken, removeToken } from "@/utils/auth";
 import router from "@/router/index";
-import { personalDemand } from '@/api/demand'
+import { personalDemand, personalDemandConsult } from '@/api/demand'
 let token;
 let isLoged;
 let name;
@@ -135,7 +139,9 @@ export default {
       token,
       name,
       Drawer: false,
-      activeNames: ['1']
+      activeNames: [],
+      personalDemand: [],
+      personalDemandConsult: []
     };
   },
   // 解决轮播图的高度自适应
@@ -154,7 +160,9 @@ export default {
     Earth
   },
   created() {
-    this.token = store.state.token;
+    // 获取个人信息
+    store.commit('SET_TOKEN', getToken());
+    this.token = getToken();
     if (this.token === '' || typeof (this.token) === "undefined") this.isLoged = false;
     else this.isLoged = true;
     getInfo().then(res => {
@@ -162,19 +170,27 @@ export default {
     }).catch(err => {
       console.log(err);
     });
+
+    // 获取个人中心信息
     const query = {
-      limit: 3,
-      page: 2
+      limit: 2,
+      page: 1
     }
-    console.log(this.token);
-    personalDemand(query).then(res => {
-      console.log(res);
+    personalDemand().then(res => {
+      console.log('personal_demand', res);
+      this.personalDemand = res;
+    }).catch(err => {
+      console.log(err);
+    });
+    personalDemandConsult(query).then(res => {
+      this.personalDemandConsult = res.results;
+      console.log('personalDemandConsult', this.personalDemandConsult);
     }).catch(err => {
       console.log(err);
     });
   },
   methods: {
-    handleLogOut() {
+    handleLogOut() {//退出
       console.log('我要退出');
       removeToken();
       store.commit('SET_TOKEN', '');
@@ -210,7 +226,7 @@ export default {
 /* 内容 */
 .nav_content {
   width: 1226px;
-  height: 550px;
+  height: 300px;
   position: absolute;
   left: 0;
   top: 230px;
