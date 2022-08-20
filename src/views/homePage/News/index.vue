@@ -19,11 +19,12 @@
         </div>
         <div class="content">
           <ul v-for="item, index in notifyList" :key="index">
-            <li>
+            <li style="justify-content: space-between;flex: 1;display: flex;align-items: center;">
               <router-link :to="{ 'name': 'articleDetail', 'query': { 'type': 'notify', 'id': item.id } }"
-                target="_blank">
+                target="_blank" style="width: 420px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;   ">
                 {{ item.title }}
               </router-link>
+              <span>{{ item.publish_date }}</span>
             </li>
           </ul>
         </div>

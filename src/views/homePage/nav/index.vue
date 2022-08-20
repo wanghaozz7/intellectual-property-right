@@ -41,7 +41,12 @@
         <div class="big_title">知识产权服务平台</div>
         <div class="nav_blocks">
           <ul style="display: flex;">
-            <li v-for="item in blocks">{{ item }}</li>
+            <li v-for="item in blocks">
+              <router-link :to="{ 'name': item.link }" target="_blank">
+                {{ item.name }}
+              </router-link>
+
+            </li>
             <li style="margin-right: 50px;"></li>
             <router-link :to="{ 'name': 'login', 'query': { 'type': 'login' } }" target="_blank" v-if="!isLoged">
               <li style="color: white;">登录</li>
@@ -77,16 +82,21 @@
     <el-drawer :with-header="false" :visible.sync="Drawer" direction="rtl" size="300px">
       <el-collapse v-model="activeNames" style="padding: 20px;">
         <el-collapse-item title="我感兴趣的需求" name="1">
-          <router-link v-for="item of personalDemandConsult"
-            :to="{ 'name': 'articleDetail', 'query': { 'type': 'news', 'id': item.id } }" target="_blank">
-            <div>{{ item.demand_title }}</div>
-          </router-link>
+          <div v-for="item of personalDemandConsult">
+            <router-link :to="{ 'name': 'demandDetail', 'query': { 'id': item.id } }" target="_blank"
+              class="link-style">
+              {{ item.demand_title }}
+            </router-link>
+          </div>
+
         </el-collapse-item>
         <el-collapse-item title="我提出的需求" name="2">
-          <router-link v-for="item of personalDemand"
-            :to="{ 'name': 'articleDetail', 'query': { 'type': 'news', 'id': item.id } }" target="_blank">
-            <div>{{ item.demand_title }}</div>
-          </router-link>
+          <div v-for="item of personalDemand">
+            <router-link :to="{ 'name': 'demandDetail', 'query': { 'id': item.id } }" target="_blank" class="link-style
+              ">
+              {{ item.title }}
+            </router-link>
+          </div>
         </el-collapse-item>
       </el-collapse>
       <el-button type="danger" style="margin: 12px 100px;" @click="handleLogOut"><i class="el-icon-error"></i>退出登录
@@ -134,7 +144,28 @@ export default {
       //     content2: 'TEMPLATE致力于打造基于EOS互联网3.0数据与应用2'
       //   },
       // ],
-      blocks: ['首页', '通知公告', '动态资讯', '专利导航', '领域专家', '企业需求', '政策法规'],
+      blocks: [{
+        name: '首页',
+        link: 'homePage'
+      }, {
+        name: '通知公告',
+        link: 'noticeDetail'
+      }, {
+        name: '动态资讯',
+        link: 'newsDetail'
+      }, {
+        name: '专利导航',
+        link: 'patentList'
+      }, {
+        name: '领域专家',
+        link: 'expertSearch'
+      }, {
+        name: '企业需求',
+        link: 'demandList'
+      }, {
+        name: '政策法规',
+        link: 'law'
+      }],
       isLoged,
       token,
       name,
@@ -271,6 +302,18 @@ export default {
 .nav_blocks li:hover {
   cursor: pointer;
   color: rgb(9, 163, 181);
+}
+
+.link-style {
+  color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 18px;
+}
+
+.link-style a:hover {
+  color: #4a79ff;
 }
 
 
