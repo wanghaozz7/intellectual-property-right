@@ -83,7 +83,7 @@
       <el-collapse v-model="activeNames" style="padding: 20px;">
         <el-collapse-item title="我感兴趣的需求" name="1">
           <div v-for="item of personalDemandConsult">
-            <router-link :to="{ 'name': 'demandDetail', 'query': { 'id': item.id } }" target="_blank"
+            <router-link :to="{ 'name': 'demandDetail', 'query': { 'id': item.demand } }" target="_blank"
               class="link-style">
               {{ item.demand_title }}
             </router-link>
