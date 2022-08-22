@@ -89,7 +89,7 @@ export default {
   },
   created() {
     let query = {
-      limit: 5,
+      limit: 6,
       page: 1
     }
     newsList(query).then(res => {
@@ -144,7 +144,6 @@ export default {
   font-size: 24px;
   margin-bottom: 20px;
   font-weight: bold;
-  padding-bottom: 10px;
   color: rgb(89, 87, 87);
 }
 
@@ -242,5 +241,6 @@ export default {
 
 .img img {
   width: 100%;
+  height: 100%;
 }
 </style>

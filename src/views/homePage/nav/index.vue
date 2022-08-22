@@ -41,12 +41,16 @@
         <div class="big_title">知识产权服务平台</div>
         <div class="nav_blocks">
           <ul style="display: flex;">
-            <li v-for="item in blocks">
+            <!-- <li v-for="item in blocks">
               <router-link :to="{ 'name': item.link }" target="_blank">
                 {{ item.name }}
               </router-link>
-
+            </li> -->
+            <router-link :to="{ 'name': item.link }" target="_blank" v-for="item in blocks">
+                          <li >
+              {{ item.name }}
             </li>
+            </router-link>
             <li style="margin-right: 50px;"></li>
             <router-link :to="{ 'name': 'login', 'query': { 'type': 'login' } }" target="_blank" v-if="!isLoged">
               <li style="color: white;">登录</li>

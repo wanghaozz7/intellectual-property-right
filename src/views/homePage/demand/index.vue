@@ -4,13 +4,19 @@
       <div style="display: flex">
         <h2>企业最新需求</h2>
         <p>
-          <a href="/#/demandList" style="color: #196aa9" target="_blank">更多需求</a>
+          <a href="/#/demandList" style="color: #196aa9" target="_blank"
+            >更多需求</a
+          >
         </p>
       </div>
     </div>
     <div class="content">
       <div class="contentBlock" v-for="block of content">
-        <router-link v-for="item of block" :to="{ 'name': 'demandDetail', 'query': { 'id': item.id } }" target="_blank">
+        <router-link
+          v-for="item of block"
+          :to="{ name: 'demandDetail', query: { id: item.id } }"
+          target="_blank"
+        >
           <div class="item">
             <div class="date">
               <h1>{{ item.date[2] }}</h1>
@@ -128,42 +134,45 @@
 </template>
 
 <script>
-import "@/assets/css/base.css"
-import { demandList } from '@/api/demand'
+import "@/assets/css/base.css";
+import { demandList } from "@/api/demand";
 export default {
-  name: '',
+  name: "",
   data() {
     return {
-      content: [[], [], []]
-    }
+      content: [[], [], []],
+    };
   },
   created() {
-    demandList().then(res => {
-      const tmp = res;
-      console.log('demand', tmp);
-      this.content = [[], [], []];
-      for (let idx in tmp) {//分为三组
-        let i = Math.floor(idx / 2);
-        const source = tmp[idx];
-        const date = source.created_time.split('-');
-        const title = source.title;
-        const demand = source.demand_content;
-        const id = source.id;
-        const data = {
-          date,
-          title,
-          demand,
-          id
-        };
-        console.log(i, data);
-        this.content[i].push(data);
-      }
-      console.log('content', this.content);
-    }).catch(err => {
-      console.log(err);
-    });
-  }
-}
+    demandList()
+      .then((res) => {
+        const tmp = res;
+        console.log("demand", tmp);
+        this.content = [[], [], []];
+        for (let idx in tmp) {
+          //分为三组
+          let i = Math.floor(idx / 2);
+          const source = tmp[idx];
+          const date = source.created_time.split("-");
+          const title = source.title;
+          const demand = source.demand_content;
+          const id = source.id;
+          const data = {
+            date,
+            title,
+            demand,
+            id,
+          };
+          console.log(i, data);
+          this.content[i].push(data);
+        }
+        console.log("content", this.content);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+};
 </script>
 <style scoped>
 .demand {
@@ -182,7 +191,7 @@ a {
   /*background-color: red;*/
 }
 
-.title>div {
+.title > div {
   /*text-align: center;*/
   position: relative;
   top: 20%;
@@ -197,7 +206,7 @@ a {
   position: absolute;
   right: 0;
   font-size: 20px;
-  color: rgba(000, 000, 000, .7);
+  color: rgba(000, 000, 000, 0.7);
 }
 
 /*内容*/
@@ -225,12 +234,11 @@ a {
 .item .date h1 {
   margin-top: 0;
   font-size: 60px;
-  color: rgba(000, 000, 000, .8);
+  color: rgba(000, 000, 000, 0.8);
 }
 
 .content .contentBlock {
   margin: 0 13px 0 0;
-
 }
 
 /* 最右侧 */
@@ -238,34 +246,41 @@ a {
   margin-right: 0;
 }
 
-.content .contentBlock a>div {
+.content .contentBlock a > div {
   margin: 13px 0;
-  transition: all .1s;
+  transition: all 0.1s;
 }
 
-.content .contentBlock a>div:hover {
+.content .contentBlock a > div:hover {
   color: #4c6a86;
-  transition: all .1s;
+  transition: all 0.1s;
 }
 
 .content .item .itemContent {
-  width: 220px;
+  width: 200px;
 }
 
 .content .item .itemContent span {
   font-size: 20px;
   display: block;
   height: 25px;
-  overflow: hidden;
   margin-bottom: 10px;
+  overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .content .item .itemContent .textContent {
   width: 200px;
   height: 109px;
   color: #4a4a4a;
+
+  display: -webkit-box !important;
+  text-overflow: ellipsis;
   overflow: hidden;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
 }
 
 .content .item .time {
