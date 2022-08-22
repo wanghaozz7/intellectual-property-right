@@ -7,7 +7,7 @@
     <el-divider></el-divider>
     <ul>
       <li v-for="item in items" class="list-item">
-        <router-link :to="{ 'name': 'articleDetail', 'query': { 'type': link_type, 'id': item.id } }" target="_blank">
+        <router-link :to="{ 'name': 'articleDetail', 'query': { 'type': link_type, 'id': item.id } }" target="_blank" class="list-item-title">
           <span class="list-item-title">{{ item.title }}</span>
         </router-link>
         <span>{{ item.publish_date }}</span>
